@@ -1,0 +1,15 @@
+microservice:
+  processor: Backend
+  msServiceName: TriDubai-Backend
+sso:
+  url:
+  username: 
+  scope: 
+  grantType: 
+  tokenExpiry: 
+logging:
+  loggerLevel: debug
+database:
+  hzlADDR:
+  conRetryLimit: 
+  workerMode: 
