@@ -119,7 +119,6 @@ func AppLogger(level string, description string, time int64, items ...string) {
 
 	var fields []zapcore.Field
 	var field zapcore.Field
-	fields = append(fields, zap.String("microservice", MSName))
 	if level != "info" {
 		fields = append(fields, zap.Float64("elapsed-ms", float64(time)/1000000.0))
 	}
