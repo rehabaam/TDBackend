@@ -17,25 +17,12 @@ var (
 
 // ActiveConfig Micro-service's configs
 type ActiveConfig struct {
-	Microservice struct {
-		Processor     string `yaml:"processor" envconfig:"MS_PROCESSOR"`
-		MSServiceName string `yaml:"msServiceName" envconfig:"MS_SERVICE_NAME"`
-	} `yaml:"microservice"`
-	SSO struct {
-		URL       string `yaml:"url" envconfig:"SSO_URL"`
-		Username  string `yaml:"username" envconfig:"SSO_USERNAME"`
-		Password  string `envconfig:"SSO_PASSWORD"`
-		ClientID  string `envconfig:"SSO_CLIENT_ID"`
-		Secret    string `envconfig:"SSO_SECRET"`
-		Scope     string `yaml:"scope" envconfig:"SSO_SCOPE"`
-		GrantType string `yaml:"grantType" envconfig:"SSO_GRANT_TYPE"`
-	} `yaml:"sso"`
+	Service struct {
+		Name string `yaml:"name" envconfig:"NAME"`
+	} `yaml:"service"`
 	Logging struct {
 		LoggerLevel string `yaml:"loggerLevel" envconfig:"LOGGER_LEVEL"`
 	} `yaml:"logging"`
-	Database struct {
-		HzlADDR string `yaml:"hzlADDR" envconfig:"HAZELCAST_ADDRESS"`
-	} `yaml:"database"`
 }
 
 // Load config from config files or from environment variables
@@ -47,7 +34,7 @@ func Load() {
 	// Read from yml file & Environment variables
 	readFile(&Serviceconfig, configPath)
 
-	if err := logger.Init(Serviceconfig.Logging.LoggerLevel, strTime, Serviceconfig.Microservice.MSServiceName); err != nil {
+	if err := logger.Init(Serviceconfig.Logging.LoggerLevel, strTime, Serviceconfig.Service.Name); err != nil {
 		fmt.Printf("failed to initialize logger: %v", err.Error())
 	}
 
