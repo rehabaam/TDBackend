@@ -11,8 +11,8 @@ import (
 
 var (
 	configPath string = "config/prod.yml"
-	// Serviceconfig main config
-	Serviceconfig ActiveConfig
+	// Config main config
+	Config ActiveConfig
 )
 
 // ActiveConfig Micro-service's configs
@@ -32,9 +32,9 @@ func Load() {
 	strTime := time.Now().Format(time.RFC3339)
 
 	// Read from yml file & Environment variables
-	readFile(&Serviceconfig, configPath)
+	readFile(&Config, configPath)
 
-	if err := logger.Init(Serviceconfig.Logging.LoggerLevel, strTime, Serviceconfig.Service.Name); err != nil {
+	if err := logger.Init(Config.Logging.LoggerLevel, strTime, Config.Service.Name); err != nil {
 		fmt.Printf("failed to initialize logger: %v", err.Error())
 	}
 
