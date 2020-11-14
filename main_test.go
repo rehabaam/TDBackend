@@ -18,7 +18,7 @@ func Test_StartServer(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			ans := startServer()
 			if ans != nil {
-				t.Error(" Expected", nil, "Got", ans)
+				t.Error("Expected", nil, "Got", ans)
 			}
 
 		})
