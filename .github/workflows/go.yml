@@ -11,8 +11,10 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    env:
+      GO111MODULE: on
+ 
     steps:
-
     - name: Set up Go 1.x
       uses: actions/setup-go@v2
       with:
@@ -24,6 +26,12 @@ jobs:
       with:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
+   
+    # GoSec security scanner
+    - name: Run Gosec Security Scanner
+      uses: securego/gosec@master
+      with:
+        args: ./...  
 
     # Sonar cloud scan for TDBackend project
     - name: SonarCloud Scan
@@ -32,18 +40,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.SQGH_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-    # GoSec security scanner
-    - name: Run Gosec Security Scanner
-      uses: securego/gosec@master
-      with:
-        args: ./...
-
     # Get Project dependencies
     - name: Get dependencies
       run: |
        if [ -f go.mod ]; then
             go mod tidy
-            go mod vendor
+            go mod verify
         fi
 
     - name: Build
