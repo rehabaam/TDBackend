@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GO111MODULE: on
+      GOPATH: ${{ github.workspace }}
  
     steps:
     - name: Set up Go 1.x
