@@ -42,11 +42,11 @@ jobs:
             go mod verify
         fi
 
-    # GoSec security scanner
-    - name: Run Gosec Security Scanner
-      uses: securego/gosec@master
-      with:
-        args: ./...  
+#     # GoSec security scanner
+#     - name: Run Gosec Security Scanner
+#       uses: securego/gosec@master
+#       with:
+#         args: ./...  
         
     - name: Build
       run: go build -v .
