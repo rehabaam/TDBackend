@@ -26,13 +26,6 @@ jobs:
       with:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
-   
-#    To be fixed later
-    # GoSec security scanner
-    - name: Run Gosec Security Scanner
-      uses: securego/gosec@master
-      with:
-        args: ./...  
 
     # Sonar cloud scan for TDBackend project
     - name: SonarCloud Scan
@@ -49,6 +42,12 @@ jobs:
             go mod verify
         fi
 
+    # GoSec security scanner
+    - name: Run Gosec Security Scanner
+      uses: securego/gosec@master
+      with:
+        args: ./...  
+        
     - name: Build
       run: go build -v .
 
