@@ -1,6 +1,7 @@
 package config
 
 import (
+	labels "TDBackend/localization"
 	"TDBackend/logger"
 	"fmt"
 	"os"
@@ -28,8 +29,8 @@ type ActiveConfig struct {
 // Load config from config files or from environment variables
 func Load() {
 
-	// Get the time in RFC3339 format
-	strTime := time.Now().Format(time.RFC3339)
+	// Get the time in RFC3339Milli format
+	strTime := time.Now().Format(labels.RFC3339Milli)
 
 	// Read from yml file & Environment variables
 	readFile(&Config, configPath)

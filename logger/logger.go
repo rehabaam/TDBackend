@@ -1,6 +1,7 @@
 package logger
 
 import (
+	labels "TDBackend/localization"
 	"fmt"
 	"os"
 	"strings"
@@ -53,7 +54,7 @@ func getZapLevel(level string) zapcore.Level {
 // customTimeEncoder encode Time to our custom format
 // This example how we can customize zap default functionality
 func customTimeEncoder(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
-	enc.AppendString(t.Format(time.RFC3339))
+	enc.AppendString(t.Format(labels.RFC3339Milli))
 }
 
 // Init initializes log by input parameters
