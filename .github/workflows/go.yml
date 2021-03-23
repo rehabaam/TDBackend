@@ -28,11 +28,11 @@ jobs:
         fetch-depth: 0
    
 #    To be fixed later
-#     # GoSec security scanner
-#     - name: Run Gosec Security Scanner
-#       uses: securego/gosec@master
-#       with:
-#         args: ./...  
+    # GoSec security scanner
+    - name: Run Gosec Security Scanner
+      uses: securego/gosec@master
+      with:
+        args: ./...  
 
     # Sonar cloud scan for TDBackend project
     - name: SonarCloud Scan
