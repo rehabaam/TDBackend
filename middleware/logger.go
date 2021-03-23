@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	labels "TDBackend/localization"
 	"net/http"
 	"strings"
 	"time"
@@ -42,13 +43,13 @@ func AddLogger(logger *zap.Logger, h http.Handler) http.Handler {
 
 		// Log HTTP request
 		logger.Debug("request started",
-			zap.String("request-id", id),
-			zap.String("http-scheme", scheme),
-			zap.String("http-proto", proto),
-			zap.String("http-method", method),
-			zap.String("remote-addr", remoteAddr),
-			zap.String("user-agent", userAgent),
-			zap.String("uri", uri),
+			zap.String(labels.RequestID, id),
+			zap.String(labels.HTTPScheme, scheme),
+			zap.String(labels.HTTPProto, proto),
+			zap.String(labels.HTTPMethod, method),
+			zap.String(labels.RemoteAddr, remoteAddr),
+			zap.String(labels.UserAgent, userAgent),
+			zap.String(labels.URI, uri),
 		)
 
 		t1 := time.Now()
@@ -57,13 +58,13 @@ func AddLogger(logger *zap.Logger, h http.Handler) http.Handler {
 
 		// Log HTTP response
 		logger.Debug("request completed",
-			zap.String("request-id", id),
-			zap.String("http-scheme", scheme),
-			zap.String("http-proto", proto),
-			zap.String("http-method", method),
-			zap.String("remote-addr", remoteAddr),
-			zap.String("user-agent", userAgent),
-			zap.String("uri", uri),
+			zap.String(labels.RequestID, id),
+			zap.String(labels.HTTPScheme, scheme),
+			zap.String(labels.HTTPProto, proto),
+			zap.String(labels.HTTPMethod, method),
+			zap.String(labels.RemoteAddr, remoteAddr),
+			zap.String(labels.UserAgent, userAgent),
+			zap.String(labels.URI, uri),
 			zap.Float64("elapsed-ms", float64(time.Since(t1).Nanoseconds())/1000000.0),
 		)
 	})
