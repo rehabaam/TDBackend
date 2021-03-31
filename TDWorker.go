@@ -11,9 +11,8 @@ func main() {
 
 	// Run HTTP server
 	config.Load()
-	startServer()
+	_ = startServer()
 
-	return
 }
 
 // startServer func starts an HTTP server that exposes RESTful APIs
