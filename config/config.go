@@ -7,6 +7,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/kelseyhightower/envconfig"
 	"gopkg.in/yaml.v2"
 )
 
@@ -18,11 +19,12 @@ var (
 
 // ActiveConfig Micro-service's configs
 type ActiveConfig struct {
-	Service struct {
-		Name string `yaml:"name" envconfig:"NAME"`
-	} `yaml:"service"`
+	Microservice struct {
+		Processor string `yaml:"processor" envconfig:"PROCESSOR"`
+		Service   string `yaml:"service" envconfig:"SERVICE_NAME"`
+	} `yaml:"microService"`
 	Logging struct {
-		LoggerLevel string `yaml:"loggerLevel" envconfig:"LOGGER_LEVEL"`
+		LoggerLevel string `yaml:"level" envconfig:"LOGGER_LEVEL"`
 	} `yaml:"logging"`
 }
 
@@ -35,7 +37,7 @@ func Load() {
 	// Read from yml file & Environment variables
 	readFile(&Config, configPath)
 
-	if err := logger.Init(Config.Logging.LoggerLevel, strTime, Config.Service.Name); err != nil {
+	if err := logger.Init(Config.Logging.LoggerLevel, strTime, Config.Microservice.Processor); err != nil {
 		fmt.Printf("failed to initialize logger: %v", err.Error())
 	}
 
@@ -52,6 +54,14 @@ func readFile(cfg interface{}, path string) {
 
 	decoder := yaml.NewDecoder(f)
 	err = decoder.Decode(cfg)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// Read from Environment variables
+func readEnv(cfg interface{}) {
+	err := envconfig.Process("", cfg)
 	if err != nil {
 		panic(err)
 	}
