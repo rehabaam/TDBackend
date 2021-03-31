@@ -25,7 +25,8 @@ func readFileData(endPoint string, w http.ResponseWriter, r *http.Request) {
 	// if we os.Open returns an error then handle it
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		logger.AppLogger(labels.Error, "Result of GET "+endPoint+"!", time.Since(t).Nanoseconds(), labels.Error+"|"+err.Error())
+		logger.AppLogger(labels.Error, "Error while opening "+endPoint+" file!", time.Since(t).Nanoseconds(), labels.Error+"|"+err.Error())
+		return
 	}
 
 	// defer the closing of our jsonFile so that we can parse it later on
@@ -36,7 +37,8 @@ func readFileData(endPoint string, w http.ResponseWriter, r *http.Request) {
 	if errFile != nil {
 		// Set HTTP code to 500
 		w.WriteHeader(http.StatusInternalServerError)
-		logger.AppLogger(labels.Error, "Result of GET Partners", time.Since(t).Nanoseconds(), labels.Error+"|"+errFile.Error())
+		logger.AppLogger(labels.Error, "Error while reading "+endPoint+" file!", time.Since(t).Nanoseconds(), labels.Error+"|"+errFile.Error())
+		return
 	}
 
 	// Set JSON as a Content-Type and User-Agent for output
@@ -45,8 +47,5 @@ func readFileData(endPoint string, w http.ResponseWriter, r *http.Request) {
 
 	// Send data out
 	w.Write(byteValue)
-
-	// Set HTTP code to 200
-	w.WriteHeader(http.StatusOK)
 	logger.AppLogger(labels.Debug, "Result of GET func", time.Since(t).Nanoseconds(), labels.Code+"|"+fmt.Sprintf("%v", http.StatusOK))
 }

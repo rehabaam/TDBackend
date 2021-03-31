@@ -10,15 +10,15 @@ import (
 var (
 	configPath string = "config/prod.yml"
 	// Config main config
-	Config ActiveConfig
+	AppConfig Config
 )
 
 // ActiveConfig Micro-service's configs
-type ActiveConfig struct {
+type Config struct {
 	Microservice struct {
-		Processor string `yaml:"processor" envconfig:"PROCESSOR"`
+		Processor string `yaml:"processor" envconfig:"PROCESSOR_NAME"`
 		Service   string `yaml:"service" envconfig:"SERVICE_NAME"`
-	} `yaml:"microService"`
+	} `yaml:"microservice"`
 	Logging struct {
 		LoggerLevel string `yaml:"level" envconfig:"LOGGER_LEVEL"`
 	} `yaml:"logging"`
@@ -28,8 +28,8 @@ type ActiveConfig struct {
 func Load() {
 
 	// Read from yml file & Environment variables
-	readFile(&Config, configPath)
-	readEnv(&Config)
+	readFile(&AppConfig, configPath)
+	readEnv(&AppConfig)
 
 }
 

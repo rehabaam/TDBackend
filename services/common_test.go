@@ -33,9 +33,9 @@ func Test_readFileData(t *testing.T) {
 			},
 		},
 		{
-			name: "readFileData_failed",
+			name: "readFileData_failure",
 			args: args{
-				endPoint: "Partners",
+				endPoint: "partners!",
 				w:        rw,
 				r:        session,
 			},
@@ -43,9 +43,9 @@ func Test_readFileData(t *testing.T) {
 		{
 			name: "readFileData_nil",
 			args: args{
-				endPoint: "",
+				endPoint: "partners",
 				w:        rw,
-				r:        session,
+				r:        nil,
 			},
 		},
 	}

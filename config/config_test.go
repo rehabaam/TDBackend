@@ -15,7 +15,7 @@ func TestLoad(t *testing.T) {
 		{
 			name:             "givenExistPath_loadFile_success",
 			configPathFormat: "prod.yml",
-			cfg:              &Config,
+			cfg:              &AppConfig,
 			wantPanic:        false,
 		},
 	}
@@ -47,7 +47,7 @@ func Test_readFile(t *testing.T) {
 		{
 			name: "givenExistPath_success",
 			args: args{
-				cfg:  &Config,
+				cfg:  &AppConfig,
 				path: "prod.yml",
 			},
 			wantPanic: false,
@@ -87,7 +87,7 @@ func Test_readEnv(t *testing.T) {
 		{
 			name: "givenExistPath_readEnv_success",
 			args: args{
-				cfg: &Config,
+				cfg: &AppConfig,
 			},
 			wantPanic: false,
 		},
