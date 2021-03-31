@@ -1,11 +1,7 @@
 package config
 
 import (
-	labels "TDBackend/localization"
-	"TDBackend/logger"
-	"fmt"
 	"os"
-	"time"
 
 	"github.com/kelseyhightower/envconfig"
 	"gopkg.in/yaml.v2"
@@ -31,17 +27,10 @@ type ActiveConfig struct {
 // Load config from config files or from environment variables
 func Load() {
 
-	// Get the time in RFC3339Milli format
-	strTime := time.Now().Format(labels.RFC3339Milli)
-
 	// Read from yml file & Environment variables
 	readFile(&Config, configPath)
+	readEnv(&Config)
 
-	if err := logger.Init(Config.Logging.LoggerLevel, strTime, Config.Microservice.Processor); err != nil {
-		fmt.Printf("failed to initialize logger: %v", err.Error())
-	}
-
-	logger.Log.Debug(fmt.Sprintf("Default config file: '%s' is loaded...", configPath))
 }
 
 // Read yml file
