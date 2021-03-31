@@ -83,7 +83,6 @@ func Test_readEnv(t *testing.T) {
 		args      args
 		wantPanic bool
 	}{
-		// TODO: Add test cases.
 		{
 			name: "givenExistPath_readEnv_success",
 			args: args{
