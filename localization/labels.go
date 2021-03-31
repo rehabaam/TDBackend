@@ -14,7 +14,9 @@ const (
 
 	// HTTPContentType label
 	HTTPContentTypeKey   = "Content-Type"
-	HTTPContentTypeValue = "application/json"
+	HTTPContentTypeValue = "application/json; charset=utf-8"
+	HTTPUSERAGENTKey     = "User-Agent"
+	HTTPUSERAGENTValue   = "TriDubai-Api/1.0"
 
 	// logger levels
 	Info  = "info"
@@ -23,5 +25,4 @@ const (
 
 	// Custom Millisecond for RC3339
 	RFC3339Milli = "2006-01-02T15:04:05.999Z07:00"
-
 )

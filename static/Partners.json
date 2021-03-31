@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "name": "Velo Presto",
+        "link": "http://www.velopresto.cc/",
+        "section": "National - UAE",
+        "description": "Velo Presto offers bike servicing from their state of the art mobile workshop at your home or office.\n\nThe workshop is fully equipped with Park Tools and a full range of parts and accesories from brands such as: Shimano, SRAM, BBB, Continental, Vittoria, and more. \n\nThey also offer rental bikes that can be delivered to you or to the bike track of your choice, great way to get your friends into riding. \n\nTravel bags and cases are also availbale for rent as well as a packing and unpacking service. \nOperated by a bunch of friendly and experienced bike lovers",
+        "latitude": "25.2048",
+        "longitude": "55.2708",
+        "logo": "https://static1.squarespace.com/static/5679680d2399a3acd195c64e/t/59ee1a905b409bf79d119041/1508776602686/VeloPresto.png?format=500w"
+    },
+    {
+        "id": "2",
+        "name": "Wolfis",
+        "link": "http://www.wbs.ae/",
+        "section": "National - UAE",
+        "description": "Wolfi Bike Shop is the iddle East Cycling Candy Store.\nThey have got 23 dedicated enthusiasts waiting to help you, with over 100 years worth of cycling knowledge between them (which means you don have to research, surf the net, or wade through old magazines theye done it all for you!).\n\nAlong with their great products and services, they are actively involved in growing and supporting the cycling fraternity - mainly through their patronage of the Dubai Roadsters cycling club.\n\nWith lots of triathlon specific kit on sale, Wolfi is the place.",
+        "latitude": "25.1649983",
+        "longitude": "55.2365637",
+        "logo": "https://static1.squarespace.com/static/5679680d2399a3acd195c64e/t/568de8464bf1183096d1e3fd/1465654620986/?format=500w"
+    },
+    {
+        "id": "11",
+        "name": "UP AND RUNNING",
+        "link": "https://www.upandrunningdubai.com/",
+        "section": "National - UAE",
+        "description": "UPANDRUNNING is a multidisciplinary team made up of expert specialists combining family medicine, sports medicine, rehabilitation services, and high performance & health science services. The UPANDRUNNING approach is differentiated by our clinical excellence, our consummate care of our patients and importantly the skills and experience of our team.Whether you have a niggling injury that you are trying to shake, are looking for nutrition and fuelling advice or you want to significantly improve your performance UPANDRUNNING can help. Wel provide the right clinical expertise, support, and education to help you achieve your immediate goals and enjoy a long and healthy life.\n\n15% Off on selected services.\n\nContact no:  (971) 04 518 5400\n\nWhatsApp: (971) 56 829 8173 ",
+        "latitude": "25.1716935",
+        "longitude": "55.22965",
+        "logo": "https://static1.squarespace.com/static/5679680d2399a3acd195c64e/t/5e05ad481aa65222ba8d2955/1577430350411/UP%26Running.jpg?format=500w"
+    },
+    {
+        "id": "12",
+        "name": "Sported",
+        "link": "http://www.sported.ae/",
+        "section": "National - UAE",
+        "description": "Sported.ae is more than an online shop. We aim to provide a destination where athletes can obtain information that will help them with their training and racing. Our race calendar lists all multisport events across the UAE in one place including virtual races. There is a directory of coaches and a range of useful and inspirational articles. We welcome feedback and ideas from fellow athletes and invite athletes to send us their write-ups which will be rewarded with a 300aed voucher if published on the Sported site.",
+        "latitude": "25.2048",
+        "longitude": "55.2708",
+        "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/1594914041254-M6EA72MCIMYF7FYCV0HL/ke17ZwdGBToddI8pDm48kJ7hN1SIzc9MDDchm_vn7yx7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0rGufiEbbnf8uYoR7VF_4z3hPxOdAZfonJBN6M5bNGZvOhIh_yWJy46EeOa3sD2Z3w/Sported.png?format=300w"
+    }
+]
