@@ -41,6 +41,7 @@ jobs:
             go mod tidy
             go mod verify
             go get github.com/ory/go-acc
+            go get github.com/mattn/goveralls
         fi
         
     # Get Project dependencies
@@ -48,18 +49,18 @@ jobs:
       run: |
        go-acc -o coverage.out ./... -- -timeout 30m
 
+    - name: Code coverage
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: ${{ github.workspace }}/coverage.out
+        
 #     # GoSec security scanner
 #     - name: Run Gosec Security Scanner
 #       uses: securego/gosec@master
 #       with:
 #         args: ./...  
 
-    - name: Code coverage
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: ${{ github.workspace }}/coverage/lcov.info
-        
     - name: Build
       run: go build -v .
 
