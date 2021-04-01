@@ -21,8 +21,9 @@ func Test_readFileData(t *testing.T) {
 		r        *http.Request
 	}
 	tests := []struct {
-		name string
-		args args
+		name    string
+		args    args
+		wantErr bool
 	}{
 		{
 			name: "readFileData_success",
@@ -31,6 +32,7 @@ func Test_readFileData(t *testing.T) {
 				w:        rw,
 				r:        partner,
 			},
+			wantErr: false,
 		},
 		{
 			name: "readFileData_failure",
@@ -39,6 +41,7 @@ func Test_readFileData(t *testing.T) {
 				w:        rw,
 				r:        session,
 			},
+			wantErr: false,
 		},
 		{
 			name: "readFileData_nil",
@@ -47,14 +50,19 @@ func Test_readFileData(t *testing.T) {
 				w:        rw,
 				r:        nil,
 			},
+			wantErr: false,
 		},
 	}
 
 	applog.Init("debug", time.Now().Format(labels.RFC3339Milli), "TDBackend")
-
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-
+			defer func() {
+				r := recover()
+				if (r != nil) != tt.wantErr {
+					t.Errorf("readFileData(), wantPanic = %v", tt.wantErr)
+				}
+			}()
 			readFileData(tt.args.endPoint, tt.args.w, tt.args.r)
 		})
 	}

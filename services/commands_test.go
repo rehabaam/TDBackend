@@ -44,7 +44,7 @@ func Test_getSessions(t *testing.T) {
 
 func Test_getDeals(t *testing.T) {
 
-	partner, _ := http.NewRequest("GET", "http://rehabaam.net:8080/TriDubai/v1/sessions/getSessions", nil)
+	sessions, _ := http.NewRequest("GET", "http://rehabaam.net:8080/TriDubai/v1/sessions/getSessions", nil)
 	rw := httptest.NewRecorder()
 
 	type args struct {
@@ -60,7 +60,15 @@ func Test_getDeals(t *testing.T) {
 			name: "getSessions_failure",
 			args: args{
 				w: rw,
-				r: partner,
+				r: sessions,
+			},
+			wantPanic: true,
+		},
+		{
+			name: "getSessions_success",
+			args: args{
+				w: rw,
+				r: sessions,
 			},
 			wantPanic: true,
 		},
