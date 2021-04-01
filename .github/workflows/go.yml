@@ -40,7 +40,13 @@ jobs:
        if [ -f go.mod ]; then
             go mod tidy
             go mod verify
+            go get github.com/ory/go-acc
         fi
+        
+    # Get Project dependencies
+    - name: Create Coverage report
+      run: |
+       go-acc -o coverage.out ./... -- -timeout 30m
 
 #     # GoSec security scanner
 #     - name: Run Gosec Security Scanner
