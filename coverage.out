@@ -1,8 +1,4 @@
 mode: atomic
-TDBackend/services/commands.go:10.58,12.2 1 0
-TDBackend/services/commands.go:15.55,17.2 1 0
-TDBackend/services/commands.go:20.58,22.2 1 0
-TDBackend/services/commands.go:25.24,34.2 6 0
 TDBackend/services/common.go:14.76,26.16 4 0
 TDBackend/services/common.go:33.2,37.20 3 0
 TDBackend/services/common.go:45.2,50.133 4 0
@@ -53,6 +49,10 @@ TDBackend/logger/logger.go:140.15,141.36 1 0
 TDBackend/logger/logger.go:142.15,143.36 1 0
 TDBackend/logger/logger.go:144.15,145.36 1 0
 TDBackend/logger/logger.go:146.14,147.35 1 0
+TDBackend/services/commands.go:10.58,12.2 1 0
+TDBackend/services/commands.go:15.55,17.2 1 0
+TDBackend/services/commands.go:20.58,22.2 1 0
+TDBackend/services/commands.go:25.24,34.2 6 0
 TDBackend/config/config.go:28.13,34.2 2 1
 TDBackend/config/config.go:37.45,39.16 2 3
 TDBackend/config/config.go:42.2,46.16 4 2

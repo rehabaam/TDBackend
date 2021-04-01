@@ -12,7 +12,7 @@ import (
 func Test_readFileData(t *testing.T) {
 
 	partner, _ := http.NewRequest("GET", "http://rehabaam.net:8080/TriDubai/v1/sessions/getPartners", nil)
-	session, _ := http.NewRequest("GET", "http://rehabaam.net:8080/TriDubai/v1/sessions/getSessions", nil)
+	session, _ := http.NewRequest("POST", "http://rehabaam.net:8080/TriDubai/v1/sessions/getSessions", nil)
 	rw := httptest.NewRecorder()
 
 	type args struct {
