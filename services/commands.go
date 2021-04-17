@@ -25,7 +25,7 @@ func getSessions(w http.ResponseWriter, r *http.Request) {
 func RunServer() error {
 	r := mux.NewRouter()
 
-	api := r.PathPrefix("/TriDubai/api/v1").Subrouter()
+	api := r.PathPrefix("/api/v1").Subrouter()
 	api.HandleFunc("/partners", getPartners).Methods(http.MethodGet)
 	api.HandleFunc("/deals", getDeals).Methods(http.MethodGet)
 	api.HandleFunc("/sessions", getSessions).Methods(http.MethodGet)
