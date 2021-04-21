@@ -20,7 +20,7 @@ The project is for exposing a simple RESTful API for TriDubai mobile app.
 ```
 GET:
 ----
-Partners: https://apps.tridubai.org/api/v1/partners
-Deals: https://apps.tridubai.org/api/v1/deals
-Sessions: https://apps.tridubai.org/api/v1/sessions
+Partners: https://www.exmple.com/api/v1/partners
+Deals:    https://www.exmple.com/api/v1/deals
+Sessions: https://www.exmple.com/api/v1/sessions
 ```
