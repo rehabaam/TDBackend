@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	applog "TDBackend/logger"
 	labels "TDBackend/localization"
+	applog "TDBackend/logger"
 	"crypto/tls"
 	"net/http"
 	"testing"
