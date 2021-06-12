@@ -1,0 +1,102 @@
+[ 
+	{ "answer" : "You have come to the right place, TriDubai has hundreds of active triathletes and many took up the sport here in Dubai, and the range of abilities is enormous, from the elite, to those just wishing to test themselves. The first thing is to put your toe in the water, get involved in some training sessions, and speak to the many really friendly TriDubai members.",
+    "category" : "GENERAL",
+    "id" : "1",
+    "question" : "How do I start Triathlon?"
+  },
+  { "answer" : "On the TriDubai website you will see a wide range of sessions that are run throughout the week. Look these up and then look out for the posts on our facebook group.",
+    "category" : "GENERAL",
+    "id" : "2",
+    "question" : "How can I get involved in training sessions?"
+  },
+  { "answer" : "Ask on the TriDubai facebook group and you will get lots of recommendations.",
+    "category" : "GENERAL",
+    "id" : "3",
+    "question" : "Where can I get a coach?"
+  },
+  { "answer" : "Our sponsor Wolfies Bike Shop stocks our TriDubai Kit. As well, EFAA Sport and TriSouq.com carry TriDubai branded items.",
+    "category" : "GENERAL",
+    "id" : "4",
+    "question" : "Where can I get TriDubai branded clothing?"
+  },
+  { "answer" : "There is currently a regular TRX suspension training session Tuesday nights. These are posted on the TriDubai FB page and are held at the Fitness Park near SkyDive Dubai. You can come out and borrow a kit for up to 3 sessions after that if you want to continue we recommend that you purchase your own kit.",
+    "category" : "GENERAL",
+    "id" : "5",
+    "question" : "Where can I join Strength sessions?"
+  },
+  { "answer" : "As with many sports strengthening your core is key. TRX suspension training is great for this as almost every exercise involves the core. However, if you are working out on your own planks are they best exercise to build a strong core. As well, you will want to strengthen your legs. Key exercises would be Squats, Jump Squats, Lunges, Single Leg Squats, Calf Raises and Hamstring Curls. For your upper body Push Ups and Pull Ups are great basic exercises.",
+    "category" : "GENERAL",
+    "id" : "6",
+    "question" : "What strength Exercise should I do to support my run/cycle & swim and also to prevent injuries?"
+  },
+  { "answer" : "You should be able to swim 400m in open water comfortably. There are no lifeguards - you are swimming at your own risk - so you should ensure that you are comfortable swimming in the sea before joining. That said, you can do as much or as little of our sessions as you want: if you are unsure, then why not come along first time and just watch and see what we get up to?",
+    "category" : "SWIMMING",
+    "id" : "7",
+    "question" : "How good do I need to be at swimming to join the TriDubai sea swims?"
+  },
+  { "answer" : "There are a number of groups that offer swim coaching. We thoroughly recommend TriDubai sponsor Dubai Masters Swimming Club. Other alternatives that offer adult sessions include Tri Swim DXB, Desert Sports, FitRepublik and Speedo Swim Squads.",
+    "category" : "SWIMMING",
+    "id" : "8",
+    "question" : "Where can I get swim coaching in Dubai?"
+  },
+  { "answer" : "The sea options are available from October to May, and there are swims organised by TriDubai members. Tuesday mornings, a beginners sea swim on Wednesdays, and the main TriDubai Saturday swim session. In addition to this our TriDubai sponsor, Dubai Masters also organise sea swimming sessions on Fridays. As well, there is the Ibn Battutah sessions Monday, Wednesdays and Saturdays which are limited to the first 10 people to sign up. The main community swimming pool is the Hamdan pool (Olympic size), which is an excellent facility and doesn cost too much.",
+    "category" : "SWIMMING",
+    "id" : "9",
+    "question" : "Where can I swim in Dubai?"
+  },
+  { "answer" : "Basic equipment Goggles and a swim cap (most pools require a swim cap, and most people will recommend you swim in the sea with a cap). If you are having lessons, your swim coach will tell you what else you need. If you join organised swim sessions, then you may need, flippers, pull-buoy and paddles.",
+    "category" : "SWIMMING",
+    "id" : "10",
+    "question" : "What swim gear/equipment do I need to have to join in with the pool swims/sea swims?"
+  },
+  { "answer" : "Its optional for most of the year, but from December the warm climate tends to turn the majority of people into wetsuit fans. December to February are really the only months it is required. However, you will still see some swimmers without a wetsuit even when the water is at its coldest.",
+    "category" : "SWIMMING",
+    "id" : "11",
+    "question" : "Do I need a wetsuit?"
+  },
+  { "answer" : "There are several outlets that sell different brands including our TriDubai sponsors Adventure HQ, TriSouq.com and EFAA Sports, and other suppliers include TriPod, Sports in Life and Intersport Online Also it is worth noting that it is possible to make online purchases from outside the UAE and have them delivered to you here. (Most people have good experience with this, it does carry a small risk that customs may expect you to pay import duty).",
+    "category" : "SWIMMING",
+    "id" : "12",
+    "question" : "Where can I buy a wetsuit?"
+  },
+  { "answer" : "There are three main areas that members like to ride: Hatta: we usually start at the Hatta Fort Hotel and ride to Tunnel 1 (70km return), Tunnel 2 (85k) and Kalba (100km). This has some tough climbs including the famous Generator Hill. Jebel Hafeet in Al Ain: we usually start near the top at the Mercure Grand hotel. Bottom to top is a 13k ride with 700 m elevation gain. If you stay at the hotel they have a 30 m pool that you can use to get your swim training done. Jebel Jais is RAK. They have just put facilities at the bottom with a parking area and toilets. The first 10 km are fairly flat with the following 20 km of continual climbing for a total elevation gain of 1200 m.",
+    "category" : "BIKING",
+    "id" : "13",
+    "question" : "Where can I go to do some hill training?"
+  },
+  { "answer" : "Dubai has excellent facilities for biking including Al Qudra and Nad al Sheba. In addition to this there is a Wednesday evening session at the Autodrome motor racing circuit in Sport City. Bike rental is available from the Trek Store at the Al Qudra cycle track.",
+    "category" : "BIKING",
+    "id" : "14",
+    "question" : "Where can I bike in Dubai?"
+  },
+  { "answer" : "There are an increasing number of bike shops around Dubai, and our TriDubai sponsors Wolfi's, and Adventure HQ are popular with TriDubai members, as are Probike, the Cycle Hub, Go Sport, TriPod, Ride Bike Shop and Revolution Cycles.",
+    "category" : "BIKING",
+    "id" : "15",
+    "question" : "Where can I buy a bike?"
+  },
+  { "answer" : "There are an increasing number of options for Bike fits and most bike shops will provide a professional fitting service when you buy a bike. Our TriDubai sponsor Wolfi will also do fits for existing owners of bikes. Other options includeBikeFit Asia (based at Probike), TriPod, and the Cycle Hub. Use the TriDubai facebook group to ask for recommendations.",
+    "category" : "BIKING",
+    "id" : "16",
+    "question" : "Where can I get a bike fit?"
+  },
+  { "answer" : "There is no shortage of shops selling all types of running shoes and pretty much every brand. It worth asking for advice on the TriDubai facebook group if you are looking for something specific. But keep in mind what works for one person may not work for another.",
+    "category" : "RUNNING",
+    "id" : "17",
+    "question" : "Where can I buy running shoes?"
+  },
+  { "answer" : "Running shoes are really a matter of personal preference. The most important thing is they are comfortable. Normally you need to buy half to 1 size larger than your regular shoes to prevent your toes from hitting the end when running (also preventing black toe and loss of toe nails). Many sports clinics now provide a gait analysis service which can help decide the type of shoe for you.",
+    "category" : "RUNNING",
+    "id" : "18",
+    "question" : "Which shoes should I buy?"
+  },
+  { "answer" : "We are fortunate to have many great running areas. The following all have purpose built running track, Jumeirah Beach, The Palm Jumeirah, Nad al Sheba and Zebeel Park.",
+    "category" : "RUNNING",
+    "id" : "19",
+    "question" : "Where can I run?"
+  },
+  { "answer" : "Hill training around Dubai is difficult to find. It is an idea to incorporate a run session after your bike ride when in Hatta, Jebel Hafeet and Jebel Jais. Alternatively if you have access to a treadmill then you can adjust the incline. Treadmill training is particularly effective during the hot summer months.",
+    "category" : "RUNNING",
+    "id" : "20",
+    "question" : "Where can we do hill training?"
+  }
+]
