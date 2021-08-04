@@ -35,10 +35,10 @@ func getFAQs(w http.ResponseWriter, r *http.Request) {
 func RunServer() error {
 	r := mux.NewRouter()
 
-	api := r.PathPrefix("/api/v1").Subrouter()
-	api.HandleFunc("/partners", getPartners).Methods(http.MethodGet)
-	api.HandleFunc("/deals", getDeals).Methods(http.MethodGet)
-	api.HandleFunc("/sessions", getSessions).Methods(http.MethodGet)
+	api := r.PathPrefix("/TriDubai/v1").Subrouter()
+	api.HandleFunc("/partners/getPartners", getPartners).Methods(http.MethodGet)
+	api.HandleFunc("/deals/getDeals", getDeals).Methods(http.MethodGet)
+	api.HandleFunc("/sessions/getSessions", getSessions).Methods(http.MethodGet)
 	api.HandleFunc("/kit", getKit).Methods(http.MethodGet)
 	api.HandleFunc("/faqs", getFAQs).Methods(http.MethodGet)
 
