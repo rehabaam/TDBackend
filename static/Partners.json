@@ -20,16 +20,6 @@
         "logo": "https://static1.squarespace.com/static/5679680d2399a3acd195c64e/t/568de8464bf1183096d1e3fd/1465654620986/?format=500w"
     },
     {
-        "id": "11",
-        "name": "UP AND RUNNING",
-        "link": "https://www.upandrunningdubai.com/",
-        "section": "National - UAE",
-        "description": "UPANDRUNNING is a multidisciplinary team made up of expert specialists combining family medicine, sports medicine, rehabilitation services, and high performance & health science services. The UPANDRUNNING approach is differentiated by our clinical excellence, our consummate care of our patients and importantly the skills and experience of our team.Whether you have a niggling injury that you are trying to shake, are looking for nutrition and fuelling advice or you want to significantly improve your performance UPANDRUNNING can help. Wel provide the right clinical expertise, support, and education to help you achieve your immediate goals and enjoy a long and healthy life.\n\n15% Off on selected services.\n\nContact no:  (971) 04 518 5400\n\nWhatsApp: (971) 56 829 8173 ",
-        "latitude": "25.1716935",
-        "longitude": "55.22965",
-        "logo": "https://static1.squarespace.com/static/5679680d2399a3acd195c64e/t/5e05ad481aa65222ba8d2955/1577430350411/UP%26Running.jpg?format=500w"
-    },
-    {
         "id": "12",
         "name": "Sported",
         "link": "http://www.sported.ae/",
@@ -38,5 +28,15 @@
         "latitude": "25.2048",
         "longitude": "55.2708",
         "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/1594914041254-M6EA72MCIMYF7FYCV0HL/ke17ZwdGBToddI8pDm48kJ7hN1SIzc9MDDchm_vn7yx7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0rGufiEbbnf8uYoR7VF_4z3hPxOdAZfonJBN6M5bNGZvOhIh_yWJy46EeOa3sD2Z3w/Sported.png?format=300w"
+    },
+    {
+        "id": "13",
+        "name": "GymNation",
+        "link": "https://gymnation.com/",
+        "section": "National - UAE",
+        "description": "TriDubai is pleased to announce a partnership with GymNation – The UAE’s leading and most affordable gym chain.\n\nGymNation currently have 7 open locations across (Al Quoz, Motor City, Bur Dubai, Mirdif, Silicon Oasis, Manar Mall (RAK) and Khalidiyah Mall (Abu Dhabi) with more UAE locations planned to open by the end of 2020.\n\nAll GymNation locations are over 30,000+ SqFt in size and are open 24/7, with free parking and the widest selection of free and machine weights, cardio equipment and group exercise classes (Les Mills, Yoga, CrossFit, Spinning and more!)\n\nAs part of the partnership with GymNation, TriDubai will be launching 2 FREE, 1 hour long, weekly triathlon focussed classes for the TriDubai community, both launching this week in GymNation Al Quoz. These classes provide the perfect opportunity to get some triathlon focussed indoor training in over the summer months in GymNation’s world class facilities.\nMonday: 5.45AM – TriDubai Spin\nWednesday 5.45am – TriDubai Treadmill/Functional",
+        "latitude": "25.1437155",
+        "longitude": "55.2229296",
+        "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/1625323412244-CYGJ6PE7VK27J7LWPVD6/Screenshot+2021-07-03+at+17.42.58.png?format=300w"
     }
 ]
