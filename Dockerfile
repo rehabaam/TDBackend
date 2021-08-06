@@ -31,11 +31,12 @@ LABEL maintainer="TriDubai"
 ENV APPDIR="/TriDubai"
 
 # Create TriDubai folders
-RUN mkdir -p $APPDIR/config $APPDIR/static
+RUN mkdir -p $APPDIR/config $APPDIR/static $APPDIR/static/img
 
 # Copy data from builder to target docker image
 COPY --from=builder /go/TDBackend/config/*.yml $APPDIR/config/
 COPY --from=builder /go/TDBackend/static/* $APPDIR/static/
+COPY --from=builder /go/TDBackend/static/img/* $APPDIR/static/img/
 COPY --from=builder /go/TDBackend/TDBackend $APPDIR/TDBackend
 
 # Set the Current Working Directory inside the container
