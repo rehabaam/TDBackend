@@ -31,6 +31,11 @@ func getFAQs(w http.ResponseWriter, r *http.Request) {
 	readFileData("FAQs", w, r)
 }
 
+// getKit func for getting TriDubai Triathlon kit
+func getImages(w http.ResponseWriter, r *http.Request) {
+	getImage(w, r)
+}
+
 // RunServer func for running HTTP server
 func RunServer() error {
 	r := mux.NewRouter()
@@ -41,6 +46,7 @@ func RunServer() error {
 	api.HandleFunc("/sessions", getSessions).Methods(http.MethodGet)
 	api.HandleFunc("/kit", getKit).Methods(http.MethodGet)
 	api.HandleFunc("/faqs", getFAQs).Methods(http.MethodGet)
+	api.HandleFunc("/img/{name}", getImages).Methods(http.MethodGet)
 
 	return http.ListenAndServe(":8080", r)
 }
