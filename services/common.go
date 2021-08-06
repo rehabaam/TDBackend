@@ -52,7 +52,7 @@ func readFileData(endPoint string, w http.ResponseWriter, r *http.Request) {
 	logger.AppLogger(labels.Debug, "Result of GET func", time.Since(t).Nanoseconds(), labels.Code+"|"+fmt.Sprintf("%v", http.StatusOK))
 }
 
-// getFileData func for RESTful API
+// getImage func for Serving images
 func getImage(w http.ResponseWriter, r *http.Request) {
 
 	// Get current time
