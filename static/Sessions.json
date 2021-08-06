@@ -10,7 +10,7 @@
         "address": "Jebel Hafeet",
         "starttime": "0",
         "endtime": "0",
-        "image": "http://rehabaam.net:8080/TriDubai/v1/sessions/JebelHafeet.jpeg"
+        "image": "JebelHafeet.jpeg"
     },
     {
         "id": "2",
@@ -23,7 +23,7 @@
         "address": "Jebel Jais",
         "starttime": "0",
         "endtime": "0",
-        "image": "http://rehabaam.net:8080/TriDubai/v1/sessions/JebelJais.jpeg"
+        "image": "JebelJais.jpeg"
     },
     {
         "id": "3",
@@ -36,7 +36,7 @@
         "address": "Movenpick Ibn Battuta pool",
         "starttime": "5",
         "endtime": "8",
-        "image": "http://rehabaam.net:8080/TriDubai/v1/sessions/MovenpickIB.jpg"
+        "image": "MovenpickIB.jpg"
     },
     {
         "id": "4",
@@ -49,7 +49,7 @@
         "address": "Al Qudra cycle track",
         "starttime": "0",
         "endtime": "0",
-        "image": "http://rehabaam.net:8080/TriDubai/v1/sessions/AlQudra.jpg"
+        "image": "AlQudra.jpg"
     },
     {
         "id": "5",
@@ -62,7 +62,7 @@
         "address": "Hatta Fort hotel",
         "starttime": "0",
         "endtime": "0",
-        "image": "http://rehabaam.net:8080/TriDubai/v1/sessions/HattaFortHotel.jpg"
+        "image": "HattaFortHotel.jpg"
     },
     {
         "id": "6",
@@ -75,7 +75,7 @@
         "address": "Autodrome Dubai",
         "starttime": "17",
         "endtime": "21",
-        "image": "http://rehabaam.net:8080/TriDubai/v1/sessions/Autodrome.png"
+        "image": "Autodrome.png"
     },
     {
         "id": "7",
@@ -88,7 +88,7 @@
         "address": "SkyDive Dubai",
         "starttime": "18",
         "endtime": "21",
-        "image": "http://rehabaam.net:8080/TriDubai/v1/sessions/TRX.jpg"
+        "image": "TRX.jpg"
     },
     {
         "id": "8",
@@ -101,7 +101,7 @@
         "address": "Nad Al Sheba",
         "starttime": "0",
         "endtime": "0",
-        "image": "http://rehabaam.net:8080/TriDubai/v1/sessions/NAS.jpg"
+        "image": "NAS.jpg"
     },
     {
         "id": "9",
@@ -114,6 +114,6 @@
         "address": "Open beach/Roy beach",
         "starttime": "5",
         "endtime": "9",
-        "image": "http://rehabaam.net:8080/TriDubai/v1/sessions/Swim.jpeg"
+        "image": "Swim.jpeg"
     }
 ]

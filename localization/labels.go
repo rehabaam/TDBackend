@@ -13,10 +13,11 @@ const (
 	URI        = "uri"
 
 	// HTTPContentType label
-	HTTPContentTypeKey   = "Content-Type"
-	HTTPContentTypeValue = "application/json; charset=utf-8"
-	HTTPUSERAGENTKey     = "User-Agent"
-	HTTPUSERAGENTValue   = "TriDubai-Api/1.0"
+	HTTPContentTypeKey      = "Content-Type"
+	HTTPContentTypeValue    = "application/json; charset=utf-8"
+	HTTPContentTypeIMGValue = "image/jpeg"
+	HTTPUSERAGENTKey        = "User-Agent"
+	HTTPUSERAGENTValue      = "TriDubai-Api/1.0"
 
 	// logger levels
 	Info  = "info"
