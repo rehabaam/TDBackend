@@ -78,19 +78,6 @@
         "image": "GymNation.jpg"
     },
     {
-        "id": "7",
-        "name": "TRX session",
-        "description": "Tuesday\nfrom 7pm to 8:30pm",
-        "radius": "2000",
-        "latitude": "25.0894277",
-        "longitude": "55.1401514",
-        "emirates": "Dubai",
-        "address": "SkyDive Dubai",
-        "starttime": "18",
-        "endtime": "21",
-        "image": "TRX.jpg"
-    },
-    {
         "id": "8",
         "name": "Ride/Run session",
         "description": "All week roun\nsolo/group ride/run (24/7)",
