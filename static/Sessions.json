@@ -27,16 +27,16 @@
     },
     {
         "id": "3",
-        "name": "Movenpick IBM Pool Swim",
-        "description": "Sat, Mon & Wed\nfrom 6am to 7:30am",
+        "name": "Bluewave",
+        "description": "Sun, Tue\nfrom 6am to 7:00am",
         "radius": "1000",
-        "latitude": "25.0421427",
-        "longitude": "55.1151541",
+        "latitude": "25.1190052",
+        "longitude": "55.2143644",
         "emirates": "Dubai",
-        "address": "Movenpick Ibn Battuta pool",
-        "starttime": "5",
+        "address": "Bluewave AlQuz",
+        "starttime": "6",
         "endtime": "8",
-        "image": "MovenpickIB.jpg"
+        "image": "BlueWave.jpeg"
     },
     {
         "id": "4",
@@ -66,16 +66,16 @@
     },
     {
         "id": "6",
-        "name": "Autodrome session",
-        "description": "Wednesday \nfrom 6pm to 8:30pm",
+        "name": "GymNation",
+        "description": "Mon and Wed \nfrom 5:45pm to 7pm",
         "radius": "2000",
-        "latitude": "25.05019",
-        "longitude": "55.239732",
+        "latitude": "25.1437118",
+        "longitude": "55.2229169",
         "emirates": "Dubai",
-        "address": "Autodrome Dubai",
-        "starttime": "17",
-        "endtime": "21",
-        "image": "Autodrome.png"
+        "address": "Gym Nation AlQuz",
+        "starttime": "06",
+        "endtime": "07",
+        "image": "GymNation.png"
     },
     {
         "id": "7",
