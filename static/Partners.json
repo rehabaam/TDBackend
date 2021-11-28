@@ -20,7 +20,7 @@
         "logo": "https://static1.squarespace.com/static/5679680d2399a3acd195c64e/t/568de8464bf1183096d1e3fd/1465654620986/?format=500w"
     },
     {
-        "id": "12",
+        "id": "3",
         "name": "Sported",
         "link": "http://www.sported.ae/",
         "section": "National - UAE",
@@ -30,7 +30,7 @@
         "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/1594914041254-M6EA72MCIMYF7FYCV0HL/ke17ZwdGBToddI8pDm48kJ7hN1SIzc9MDDchm_vn7yx7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0rGufiEbbnf8uYoR7VF_4z3hPxOdAZfonJBN6M5bNGZvOhIh_yWJy46EeOa3sD2Z3w/Sported.png?format=300w"
     },
     {
-        "id": "13",
+        "id": "4",
         "name": "GymNation",
         "link": "https://gymnation.com/",
         "section": "National - UAE",
@@ -38,5 +38,15 @@
         "latitude": "25.1437155",
         "longitude": "55.2229296",
         "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/1625323412244-CYGJ6PE7VK27J7LWPVD6/Screenshot+2021-07-03+at+17.42.58.png?format=300w"
+    },
+    {
+        "id": "5",
+        "name": "Apex Sports",
+        "link": "https://www.apexsports.ae/",
+        "section": "National - UAE",
+        "description": "Apex is the leading company for swimming technical analysis is the UAE. They have an underwater camera system and endless pool which is the first of its kind in the Middle Est. The new equipment’s is run by experienced coaches who provide in-depth knowledge about your stroke and guide you in making your swimming technique more efficient. These analysis sessions will allow you to have a greater insight into your swimming and will result in improving the direction of your training time in the water.\n\nApex has an experienced strength and conditioning coach who holds a master's degree and is specialized in swimming performance. This coach is offering bespoke strength and conditioning that will improve your FTP, help build strength endurance and reduce your chances of injury.\n\nAlongside this, apex has installed water bikes which are the ideal tool for rehabbing knee injuries due to the low impact but also keeping your training specific to triathlon.\n\nThe endless pool is the ideal training tool for triathletes as it mimics the environment of the open water races that you take part in, whilst allowing you to train in intervals and track your swimming pace.",
+        "latitude": "25.1784179",
+        "longitude": "55.3064159",
+        "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/4eef1e93-1ba2-4c7b-83d8-687467dae75b/Apex.png?format=300w"
     }
 ]
