@@ -78,7 +78,7 @@
         "image": "GymNation.jpg"
     },
     {
-        "id": "8",
+        "id": "7",
         "name": "Ride/Run session",
         "description": "All week roun\nsolo/group ride/run (24/7)",
         "radius": "2000",
@@ -91,7 +91,7 @@
         "image": "NAS.jpg"
     },
     {
-        "id": "9",
+        "id": "8",
         "name": "Openwater Swim session",
         "description": "Sat, Tue & Wed\nfrom 6am to 8am",
         "radius": "2000",
