@@ -1,6 +1,8 @@
 # ignore .git and .cache folders
 .git
 .cache
+.github
+.trunk
 
 # ignore folders
 vendor/
@@ -11,6 +13,9 @@ vendor/
 # ignore files
 *.png
 **/*.png
+.hadolint.yaml
+.markdownlint.yaml
+.shellcheckrc
 
 # ignore test files
 
