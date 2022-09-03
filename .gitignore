@@ -1,2 +1,9 @@
 # Folders
 vendor
+.trunk/
+.vscode/
+
+# Files
+.hadolint.yaml
+.markdownlint.yaml
+.shellcheckrc

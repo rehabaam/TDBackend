@@ -26,4 +26,7 @@ const (
 
 	// Custom Millisecond for RC3339
 	RFC3339Milli = "2006-01-02T15:04:05.999Z07:00"
+
+	// Custom Millisecond for RC3339
+	ServerStarting = "server is starting!"
 )
