@@ -13,7 +13,7 @@ import (
 )
 
 // getFileData func for RESTful API
-func readFileData(endPoint string, w http.ResponseWriter, r *http.Request) {
+func readFileData(endPoint string, w http.ResponseWriter, r *http.Request)(int, error) {
 
 	// Get current time
 	t := time.Now()
@@ -28,7 +28,7 @@ func readFileData(endPoint string, w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		logger.AppLogger(labels.Error, "Error while opening "+endPoint+" file!", time.Since(t).Nanoseconds(), labels.Error+"|"+err.Error())
-		return
+		return 0, err
 	}
 
 	// defer the closing of our jsonFile so that we can parse it later on
@@ -40,20 +40,21 @@ func readFileData(endPoint string, w http.ResponseWriter, r *http.Request) {
 		// Set HTTP code to 500
 		w.WriteHeader(http.StatusInternalServerError)
 		logger.AppLogger(labels.Error, "Error while reading "+endPoint+" file!", time.Since(t).Nanoseconds(), labels.Error+"|"+errFile.Error())
-		return
+		return 0, errFile
 	}
 
 	// Set JSON as a Content-Type and User-Agent for output
 	w.Header().Add(labels.HTTPContentTypeKey, labels.HTTPContentTypeValue)
 	w.Header().Add(labels.HTTPUSERAGENTKey, labels.HTTPUSERAGENTValue)
 
-	// Send data out
-	w.Write(byteValue)
 	logger.AppLogger(labels.Debug, "Result of GET func", time.Since(t).Nanoseconds(), labels.Code+"|"+fmt.Sprintf("%v", http.StatusOK))
+
+	// Send data out
+	return w.Write(byteValue)
 }
 
 // getImage func for Serving images
-func getImage(w http.ResponseWriter, r *http.Request) {
+func getImage(w http.ResponseWriter, r *http.Request) (int, error){
 
 	// Get current time
 	t := time.Now()
@@ -69,7 +70,7 @@ func getImage(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		logger.AppLogger(labels.Error, "Error while opening "+params["name"]+" file!", time.Since(t).Nanoseconds(), labels.Error+"|"+err.Error())
-		return
+		return 0, err
 	}
 
 	// defer the closing of our jsonFile so that we can parse it later on
@@ -81,14 +82,15 @@ func getImage(w http.ResponseWriter, r *http.Request) {
 		// Set HTTP code to 500
 		w.WriteHeader(http.StatusInternalServerError)
 		logger.AppLogger(labels.Error, "Error while reading "+params["name"]+" file!", time.Since(t).Nanoseconds(), labels.Error+"|"+errFile.Error())
-		return
+		return 0, errFile
 	}
 
 	// Set JSON as a Content-Type and User-Agent for output
 	w.Header().Add(labels.HTTPContentTypeKey, labels.HTTPContentTypeIMGValue)
 	w.Header().Add(labels.HTTPUSERAGENTKey, labels.HTTPUSERAGENTValue)
 
-	// Send data out
-	w.Write(byteValue)
 	logger.AppLogger(labels.Debug, "Result of GET func", time.Since(t).Nanoseconds(), labels.Code+"|"+fmt.Sprintf("%v", http.StatusOK))
+
+	// Send data out
+	return w.Write(byteValue)
 }
