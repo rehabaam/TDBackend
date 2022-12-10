@@ -4,6 +4,9 @@ FROM golang:1.19.4-alpine as builder
 # Set the Current Working Directory inside the container
 WORKDIR $GOPATH/TDBackend
 
+# Install the librdkafka
+RUN apk update && apk upgrade && apk add --no-cache bash build-base
+
 # Copy go mod and sum files
 COPY go.mod go.sum ./
 
