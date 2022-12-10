@@ -1,12 +1,8 @@
 # Start from golang v1.16 base image
-FROM golang:1.16.3-alpine as builder
+FROM golang:1.19.4-alpine as builder
 
 # Set the Current Working Directory inside the container
 WORKDIR $GOPATH/TDBackend
-
-# Install the librdkafka
-RUN apk -U add ca-certificates
-RUN apk update && apk upgrade && apk add --no-cache curl pkgconfig bash build-base
 
 # Copy go mod and sum files
 COPY go.mod go.sum ./

@@ -8,32 +8,32 @@ import (
 
 // getPartners func for getting TriDubai annually partners
 func getPartners(w http.ResponseWriter, r *http.Request) {
-	readFileData("Partners", w, r)
+	_,_= readFileData("Partners", w, r)
 }
 
 // getDeals func for getting TriDubai annually deals
 func getDeals(w http.ResponseWriter, r *http.Request) {
-	readFileData("Deals", w, r)
+	_,_= readFileData("Deals", w, r)
 }
 
 // getSessions func for getting TriDubai weekly seesions
 func getSessions(w http.ResponseWriter, r *http.Request) {
-	readFileData("Sessions", w, r)
+	_,_= readFileData("Sessions", w, r)
 }
 
 // getKit func for getting TriDubai Triathlon kit
 func getKit(w http.ResponseWriter, r *http.Request) {
-	readFileData("Kit", w, r)
+	_,_= readFileData("Kit", w, r)
 }
 
 // getKit func for getting TriDubai Triathlon kit
 func getFAQs(w http.ResponseWriter, r *http.Request) {
-	readFileData("FAQs", w, r)
+	_,_= readFileData("FAQs", w, r)
 }
 
 // serveImage func for serving TriDubai Session images
 func serveImage(w http.ResponseWriter, r *http.Request) {
-	getImage(w, r)
+	_,_= getImage(w, r)
 }
 
 // RunServer func for running HTTP server
