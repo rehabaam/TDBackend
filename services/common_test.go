@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func Test_readFileData(t *testing.T) {
+func Test_getData(t *testing.T) {
 
 	partner, _ := http.NewRequest("GET", "http://rehabaam.net:8080/TriDubai/v1/sessions/getPartners", nil)
 	session, _ := http.NewRequest("POST", "http://rehabaam.net:8080/TriDubai/v1/sessions/getSessions", nil)
@@ -26,7 +26,7 @@ func Test_readFileData(t *testing.T) {
 		wantErr bool
 	}{
 		{
-			name: "readFileData_success",
+			name: "getData_success",
 			args: args{
 				endPoint: "Partners",
 				w:        rw,
@@ -35,7 +35,7 @@ func Test_readFileData(t *testing.T) {
 			wantErr: false,
 		},
 		{
-			name: "readFileData_failure",
+			name: "getData_failure",
 			args: args{
 				endPoint: "partners!",
 				w:        rw,
@@ -44,7 +44,7 @@ func Test_readFileData(t *testing.T) {
 			wantErr: false,
 		},
 		{
-			name: "readFileData_nil",
+			name: "getData_nil",
 			args: args{
 				endPoint: "partners",
 				w:        rw,
@@ -54,16 +54,16 @@ func Test_readFileData(t *testing.T) {
 		},
 	}
 
-	applog.Init("debug", time.Now().Format(labels.RFC3339Milli), "TDBackend")
+	_ = applog.Init("debug", time.Now().Format(labels.RFC3339Milli), "TDBackend")
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			defer func() {
 				r := recover()
 				if (r != nil) != tt.wantErr {
-					t.Errorf("readFileData(), wantPanic = %v", tt.wantErr)
+					t.Errorf("getData(), wantPanic = %v", tt.wantErr)
 				}
 			}()
-			readFileData(tt.args.endPoint, tt.args.w, tt.args.r)
+			_, _ = getData(tt.args.endPoint, tt.args.w, tt.args.r)
 		})
 	}
 }

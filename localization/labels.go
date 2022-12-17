@@ -11,6 +11,7 @@ const (
 	RemoteAddr = "remote-addr"
 	UserAgent  = "user-agent"
 	URI        = "uri"
+	Data       = "data"
 
 	// HTTPContentType label
 	HTTPContentTypeKey      = "Content-Type"
@@ -23,6 +24,7 @@ const (
 	Info  = "info"
 	Debug = "debug"
 	Error = "error"
+	Fatal = "fatal"
 
 	// Custom Millisecond for RC3339
 	RFC3339Milli = "2006-01-02T15:04:05.999Z07:00"
