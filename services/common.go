@@ -73,6 +73,8 @@ func getData(endPoint string, w http.ResponseWriter, r *http.Request) (int, erro
 	// Get current time
 	t := time.Now()
 
+	logger.AppLogger(labels.Debug, "REQUEST HEADERS", time.Since(t).Nanoseconds(), labels.Data+"|"+fmt.Sprintf("%v", r.Header))
+
 	// Set JSON as a Content-Type and User-Agent for output
 	w.Header().Add(labels.HTTPContentTypeKey, labels.HTTPContentTypeValue)
 	w.Header().Add(labels.HTTPUSERAGENTKey, labels.HTTPUSERAGENTValue)
