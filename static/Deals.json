@@ -50,16 +50,6 @@
         "logo": "https://static1.squarespace.com/static/5679680d2399a3acd195c64e/t/5a88417a71c10b5845ad2940/1542434257711/Los+Olivos_mv2.jpg?format=750w"
     },
     {
-        "id": "6",
-        "name": "My PediaClinic",
-        "link": "http://www.mypediaclinic.com/",
-        "section": "National - UAE",
-        "description": "This is a special offer for all our TriDubai friends. MyPediaClinic is offering a special 50% off adult dental services with fellow TriDubai member Dr. Nidhi Kotak. These services include:\n\n*Detecting the cavities caused by energy gels\n\n*Cleaning your teeth for that perfect finish line picture\n\n*Whitening your teeth so that cars can spot you safely from a distance at night in Al Qudra\n\n*Fixing those front teeth that break when someone accidentally punches you in the face during the swim leg of a race\n\nCall MyPediaClinic now on 04-4305926 to avail 50% off your consult, X Rays, cleaning and whitening.\n\nThis offer is valid till Feb 1st 2020.",
-        "latitude": "25.2339612",
-        "longitude": "55.3180203",
-        "logo": "https://static1.squarespace.com/static/5679680d2399a3acd195c64e/t/5c1a1dc60e2e72c8250081e0/1545215433577/Mypediaclinic_final_logo.JPG?format=1000w"
-    },
-    {
         "id": "7",
         "name": "Sported",
         "link": "http://www.sported.ae/",
@@ -74,7 +64,7 @@
         "name": "SwimSmoothDubai",
         "link": "https://www.swimsmoothdubai.com/",
         "section": "National - UAE",
-        "description": "SwimSmoothDubai offers TriDubai members 20% off for 121 Video Analysis and first session for FREE with our Squad training: \n\nSquad Training (Horizon International School)  60AED/Session\nSunday: 7:15 - 8:15pm Technique\nTuesday: 7:15 - 8:15pm CSS\nThursday: 6:30 - 7:30am CSS\nSaturday: 8:00 - 9:00am Endurance\nPrivate 240AED or 121 Video Analysis (500AED)\nSunday to Wednesday: 6:30 - 7:30am at English College\nBooking: https://www.swimsmoothdubai.com/booking",
+        "description": "SwimSmoothDubai offers TriDubai members 15% off for 121 Video Analysis and first session for FREE with our Squad training: \n\nSquad Training (Horizon International School)  60AED/Session\nMonday: 7:00 - 8:15pm Technique\nTuesday: 7:00 - 8:15pm CSS\nWednesday: 7:00 - 8:15pm CSS\nSaturday: 8:00 - 9:00am Endurance\n121 Video Analysis (500AED)\nBooking: https://www.swimsmoothdubai.com/booking",
         "latitude": "25.1320352",
         "longitude": "55.2059318",
         "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/1595693239770-7CSVZLFBOXS3EZ0ASR7R/ke17ZwdGBToddI8pDm48kF0ep55R04jXh09h8rktxYVZw-zPPgdn4jUwVcJE1ZvWhcwhEtWJXoshNdA9f1qD7YmDye92LJlx5Z6JHLEUGa1nkkAcAIDFUw8TtYh52zl1HOPHa-pFxfe6edpCEQ97Ew/SwimSmooth.png?format=300w"
@@ -101,13 +91,13 @@
     },
     {
         "id": "11",
-        "name": "MVMT",
-        "link": "https://mvmtfit.ae",
+        "name": "Ear-Pro-ear-spray",
+        "link": "https://www.amazon.ae/dp/B08FMWVF6D?ref=myi_title_dp",
         "section": "National - UAE",
-        "description": "MVMT Fit is a results driven boutique studio that offers a variety of classes with a keen sense on community.\n\nOur three main classes are BURN, METCON and ENDURANCE.\n\nMVMT Fit's MISSION is to empower individuals to reach their goals through results focused training led by a team focused on service excellence. \n\nhttps://mvmtfit.ae/why-strength-training-is-good-for-endurance-athletes/ \n\n10% off monthly/annual memberships.\n\nContact no: +971 55 795 8539\n\nEmail address: nikita@mvmtfit.ae",
-        "latitude": "25.0804017",
-        "longitude": "55.1443421",
-        "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/1608888742099-RUWFPCJPW3TICBU4J4B0/ke17ZwdGBToddI8pDm48kOBY6HsxRPrklhI46PT6vhIUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKc9PUKPAyG1NDjBwJOcS2oKEW1Zkp7-3m3_K1xPJR3eL9o93WQBrmvuHGB1T9jUEAu/image.png?format=300w"
+        "description": "Ear Pro ear spray is the worlds top preventative solution to fight water-related ear problems. It is formulated with all-natural ingredients, including liquid paraffin oil and oregano oil, that repel water and protect the ear from exposure to water-borne diseases. It also helps prevent swimmer's ear caused by any contaminants contained in the water. Trapped water causes all kinds of ear problems, starting with pain, that can lead to infections and potential hearing loss which water sports enthusiasts and swimmers are 5X more likely to suffer. Our ear spray doesn't affect your balance, allows you to hear naturally (no muffled noises like ear plugs) and equalize at depths when swimming, surfing, diving, or doing other water fun.\n\nEar Pro is now available on Amazon.ae however we would like to offer a 15% discount with free delivery to all TriDubai members. Please send us a WhatsApp message on 058 892 8113 with your name and address to order",
+        "latitude": "25.2048",
+        "longitude": "55.2708",
+        "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/d77b8207-39b5-4f1d-a387-339cb6d16de3/EarProSpray.jpg?format=750w"
     },
     {
         "id": "12",
@@ -141,6 +131,16 @@
     },
     {
         "id": "15",
+        "name": "Life-ID",
+        "link": "https://www.sported.ae/",
+        "section": "National - UAE",
+        "description": "LifeID drives adventure and save lives. LifeID is peace of mind for our family when we are out training, playing, or traveling. In case of an emergency, it helps first responder to reach out to our family and friends. It helps in finding missing pets & kids.\n* Personalized engraved steel id with emergency info\n* Speaks for us when we cannot\n*Superior comfort, lasting performance\n\nSpecial 20% discount for TriDubai members when you buy at www.lifeid.ae using discount code: TRIDXBLIFEID\nWant to see the product visit Sported.ae in our showroom at SurfHouse.",
+        "latitude": "25.2048",
+        "longitude": "55.2708",
+        "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/88fdca54-0719-4be4-a36d-0f793ea4d28b/LifeId.png?format=1000w"
+    },
+    {
+        "id": "16",
         "name": "Ear Pro Spray",
         "link": "https://www.amazon.ae/dp/B08FMWVF6D?ref=myi_title_dp",
         "section": "National - UAE",
@@ -150,13 +150,23 @@
         "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/d77b8207-39b5-4f1d-a387-339cb6d16de3/EarProSpray.jpg?format=300w"
     },
     {
-        "id": "16",
+        "id": "17",
         "name": "TrainingPeaks",
         "link": "https://www.trainingpeaks.com/",
         "section": "International",
-        "description": "TrainingPeaks offers TriDubai members a discount on its product using TRIDubai20 code.",
+        "description": "TrainingPeaks offers TriDubai members a discount on its product using 23TRIDubai code.",
         "latitude": "39.9688422",
         "longitude": "-105.1661836",
         "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/1610385482210-M9M1RYMYFQJGHKT7VDY9/trainingpeaks-vector-logo.png?format=300w"
+    },
+    {
+        "id": "18",
+        "name": "Form",
+        "link": "https://www.formswim.com/",
+        "section": "National - UAE",
+        "description": "FORM is an integrated Swim Platform that is powered by their Smart Swim Goggles, which display real time swim data to athletes while they train. The FORM Smart Swim Goggles are the first swim training device that not only displays performance data in real time via the goggles, but also delivers workouts through the goggles for athletes to make training more efficient, effective, engaging, motivating, and accountable.\n\nHow to order: Order on www.formswim.com and use the team code at checkout. Or use the links above. The user should make sure to choose their local currency before adding to cart and then add code TriDubai20 at checkout.",
+        "latitude": "25.2048",
+        "longitude": "55.2708",
+        "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/e6bfef92-18ff-421f-bceb-830a752a6509/small-6D8EB56E-36D0-41B7-A74C829AFBA8B4E3.png?format=2500w"
     }
 ]
