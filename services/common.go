@@ -4,7 +4,7 @@ import (
 	labels "TDBackend/localization"
 	"TDBackend/logger"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"os"
 	"time"
@@ -54,7 +54,7 @@ func readFile(endPoint string) (string, error) {
 	defer jsonFile.Close()
 
 	// Read the data from file
-	byteValue, errFile := ioutil.ReadAll(jsonFile)
+	byteValue, errFile := io.ReadAll(jsonFile)
 	if errFile != nil {
 		// Set HTTP code to 500
 		logger.AppLogger(labels.Error, "Error while reading "+endPoint+" file!", time.Since(t).Nanoseconds(), labels.Error+"|"+errFile.Error())
@@ -111,7 +111,7 @@ func getImage(w http.ResponseWriter, r *http.Request) (int, error) {
 	defer jsonFile.Close()
 
 	// Read the data from file
-	byteValue, errFile := ioutil.ReadAll(jsonFile)
+	byteValue, errFile := io.ReadAll(jsonFile)
 	if errFile != nil {
 		// Set HTTP code to 500
 		w.WriteHeader(http.StatusInternalServerError)
