@@ -7,6 +7,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -42,7 +43,7 @@ func readFile(endPoint string) (string, error) {
 	fileName := "static/" + endPoint + ".json"
 
 	// Open our jsonFile
-	jsonFile, err := os.Open(fileName)
+	jsonFile, err := os.Open(filepath.Clean(fileName))
 
 	// if we os.Open returns an error then handle it
 	if err != nil {
@@ -51,7 +52,11 @@ func readFile(endPoint string) (string, error) {
 	}
 
 	// defer the closing of our jsonFile so that we can parse it later on
-	defer jsonFile.Close()
+	defer func() {
+		if err := jsonFile.Close(); err != nil {
+			logger.AppLogger(labels.Error, "Error closing file:", time.Since(t).Nanoseconds(), err.Error())
+		}
+	}()
 
 	// Read the data from file
 	byteValue, errFile := io.ReadAll(jsonFile)
@@ -98,7 +103,7 @@ func getImage(w http.ResponseWriter, r *http.Request) (int, error) {
 	fileName := "static/img/" + params["name"]
 
 	// Open our jsonFile
-	jsonFile, err := os.Open(fileName)
+	jsonFile, err := os.Open(filepath.Clean(fileName))
 
 	// if we os.Open returns an error then handle it
 	if err != nil {
@@ -107,8 +112,11 @@ func getImage(w http.ResponseWriter, r *http.Request) (int, error) {
 		return 0, err
 	}
 
-	// defer the closing of our jsonFile so that we can parse it later on
-	defer jsonFile.Close()
+	defer func() {
+		if err := jsonFile.Close(); err != nil {
+			logger.AppLogger(labels.Error, "Error closing file:", time.Since(t).Nanoseconds(), err.Error())
+		}
+	}()
 
 	// Read the data from file
 	byteValue, errFile := io.ReadAll(jsonFile)

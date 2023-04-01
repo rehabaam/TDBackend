@@ -2,6 +2,7 @@ package commands
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/gorilla/mux"
 )
@@ -50,5 +51,10 @@ func RunServer() error {
 	api.HandleFunc("/faqs", getFAQs).Methods(http.MethodGet)
 	api.HandleFunc("/img/{name}", serveImage).Methods(http.MethodGet)
 
-	return http.ListenAndServe(":8080", r)
+	server := &http.Server{
+		Addr:              ":8080",
+		ReadHeaderTimeout: 5 * time.Second,
+		Handler:           r,
+	}
+	return server.ListenAndServe()
 }
