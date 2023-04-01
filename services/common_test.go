@@ -48,7 +48,7 @@ func Test_getData(t *testing.T) {
 			args: args{
 				endPoint: "partners",
 				w:        rw,
-				r:        nil,
+				r:        &http.Request{},
 			},
 			wantErr: false,
 		},

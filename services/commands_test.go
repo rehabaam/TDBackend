@@ -199,10 +199,10 @@ func TestRunServer(t *testing.T) {
 		name      string
 		wantPanic bool
 	}{
-		// {
-		// 	name:      "getSessions_failure",
-		// 	wantPanic: true,
-		// },
+		{
+			name:      "getSessions_failure",
+			wantPanic: true,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
