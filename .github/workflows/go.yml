@@ -47,6 +47,7 @@ jobs:
     # Get Project dependencies
     - name: Create Coverage report
       run: |
+       go install github.com/ory/go-acc@latest
        go-acc -o coverage.out ./... -- -timeout 30m
 
     - name: Code coverage
