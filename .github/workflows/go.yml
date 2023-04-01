@@ -44,22 +44,23 @@ jobs:
             go get github.com/mattn/goveralls
         fi
         
-#     # Get Project dependencies
-#     - name: Create Coverage report
-#       run: |
-#        go-acc -o coverage.out ./... -- -timeout 30m
+    # Get Project dependencies
+    # - name: Create Coverage report
+    #   run: |
+    #    go install github.com/ory/go-acc@latest
+    #    go-acc -o coverage.out ./... -- -timeout 30m
 
-#     - name: Code coverage
-#       uses: coverallsapp/github-action@master
-#       with:
-#         github-token: ${{ secrets.GITHUB_TOKEN }}
-#         path-to-lcov: ${{ github.workspace }}/coverage.out
+    # - name: Code coverage
+    #   uses: coverallsapp/github-action@master
+    #   with:
+    #     github-token: ${{ secrets.GITHUB_TOKEN }}
+    #     path-to-lcov: ${{ github.workspace }}/coverage.out
         
-#     # GoSec security scanner
-#     - name: Run Gosec Security Scanner
-#       uses: securego/gosec@master
-#       with:
-#         args: ./...  
+    # GoSec security scanner
+    - name: Run Gosec Security Scanner
+      run: |
+       go install github.com/securego/gosec/v2/cmd/gosec@latest
+       gosec ./...
 
     - name: Build
       run: go build -v .
