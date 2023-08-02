@@ -38,5 +38,15 @@
         "latitude": "25.1437155",
         "longitude": "55.2229296",
         "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/1625323412244-CYGJ6PE7VK27J7LWPVD6/Screenshot+2021-07-03+at+17.42.58.png?format=300w"
+    },
+    {
+        "id": "5",
+        "name": "GATORADE",
+        "link": "https://www.gatorade.com/",
+        "section": "National - UAE",
+        "description": "GATORADE WE EXIST TO FUEL EVERYONE’S ATHLETIC PERFORMANCE\n\nIN 2022 WE WILL DEMOCRATISE GREATNESS, SHOWING THAT WITH THE NEVER SETTLE MENTALITY, GREATNESS IS WITHIN REACH OF ALL ATHLETES.",
+        "latitude": "25.2048",
+        "longitude": "55.2708",
+        "logo": "https://images.squarespace-cdn.com/content/v1/5679680d2399a3acd195c64e/654f7408-e7af-4573-9bb6-042c04736f0e/GBolt_Blk_FullColor.png?format=2500w"
     }
 ]
