@@ -44,7 +44,7 @@ jobs:
             go get github.com/mattn/goveralls
         fi
         
-    Get Project dependencies
+    # Get Project dependencies
     - name: Create Coverage report
       run: |
        go install github.com/ory/go-acc@latest
