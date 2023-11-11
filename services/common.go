@@ -40,7 +40,7 @@ func readFile(endPoint string) (string, error) {
 	t := time.Now()
 
 	// Get file name
-	fileName := "./static/" + endPoint + ".json"
+	fileName := filepath.Join("static", fmt.Sprintf("%s.json", endPoint))
 
 	// Open our jsonFile
 	jsonFile, err := os.Open(filepath.Clean(fileName))
@@ -100,7 +100,12 @@ func getImage(w http.ResponseWriter, r *http.Request) (int, error) {
 
 	// Get file name
 	params := mux.Vars(r)
-	fileName := "static/img/" + params["name"]
+
+	fmt.Println(params)
+
+	fmt.Println("image name: ", params["name"])
+	// Get file name
+	fileName := filepath.Join("static/img", params["name"])
 
 	// Open our jsonFile
 	jsonFile, err := os.Open(filepath.Clean(fileName))

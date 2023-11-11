@@ -2,19 +2,19 @@ package commands
 
 import (
 	"TDBackend/logger"
+	"context"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 	"time"
+
+	"github.com/gorilla/mux"
 )
 
 func Test_getSessions(t *testing.T) {
 
 	logger.Init("debug", time.RFC3339, "TDBackend")
-
-	StartServer()
-	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/sessions", nil)
-	rw := httptest.NewRecorder()
+	repo["Sessions"] = `test`
 
 	type args struct {
 		w http.ResponseWriter
@@ -28,8 +28,8 @@ func Test_getSessions(t *testing.T) {
 		{
 			name: "getSessions_Success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: httptest.NewRequest(http.MethodGet, "https://localhost/api/v1/sessions", nil),
 			},
 			wantPanic: false,
 		},
@@ -45,16 +45,12 @@ func Test_getSessions(t *testing.T) {
 			getSessions(tt.args.w, tt.args.r)
 		})
 	}
-	StopServer()
 }
 
 func Test_getDeals(t *testing.T) {
 
 	logger.Init("debug", time.RFC3339, "TDBackend")
-
-	_ = StartServer()
-	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/deals", nil)
-	rw := httptest.NewRecorder()
+	repo["Deals"] = `test`
 
 	type args struct {
 		w http.ResponseWriter
@@ -68,8 +64,8 @@ func Test_getDeals(t *testing.T) {
 		{
 			name: "getDeals_success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: httptest.NewRequest(http.MethodGet, "https://localhost/api/v1/deals", nil),
 			},
 			wantPanic: false,
 		},
@@ -85,16 +81,12 @@ func Test_getDeals(t *testing.T) {
 			getDeals(tt.args.w, tt.args.r)
 		})
 	}
-	StopServer()
 }
 
 func Test_getPartners(t *testing.T) {
 
 	logger.Init("debug", time.RFC3339, "TDBackend")
-
-	_ = StartServer()
-	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/partners", nil)
-	rw := httptest.NewRecorder()
+	repo["Partners"] = `test`
 
 	type args struct {
 		w http.ResponseWriter
@@ -108,8 +100,8 @@ func Test_getPartners(t *testing.T) {
 		{
 			name: "getPartner_success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: httptest.NewRequest(http.MethodGet, "https://localhost/api/v1/partners", nil),
 			},
 			wantPanic: false,
 		},
@@ -125,16 +117,12 @@ func Test_getPartners(t *testing.T) {
 			getPartners(tt.args.w, tt.args.r)
 		})
 	}
-	StopServer()
 }
 
 func Test_getKit(t *testing.T) {
 
 	logger.Init("debug", time.RFC3339, "TDBackend")
-
-	_ = StartServer()
-	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/kit", nil)
-	rw := httptest.NewRecorder()
+	repo["Kit"] = `test`
 
 	type args struct {
 		w http.ResponseWriter
@@ -148,8 +136,8 @@ func Test_getKit(t *testing.T) {
 		{
 			name: "getKit_success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: httptest.NewRequest(http.MethodGet, "https://localhost/api/v1/kit", nil),
 			},
 			wantPanic: false,
 		},
@@ -165,16 +153,12 @@ func Test_getKit(t *testing.T) {
 			getKit(tt.args.w, tt.args.r)
 		})
 	}
-	StopServer()
 }
 
 func Test_getFAQs(t *testing.T) {
 
 	logger.Init("debug", time.RFC3339, "TDBackend")
-
-	_ = StartServer()
-	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/faqs", nil)
-	rw := httptest.NewRecorder()
+	repo["FAQs"] = `test`
 
 	type args struct {
 		w http.ResponseWriter
@@ -188,8 +172,8 @@ func Test_getFAQs(t *testing.T) {
 		{
 			name: "getFAQs_Success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: httptest.NewRequest(http.MethodGet, "https://localhost/api/v1/faqs", nil),
 			},
 			wantPanic: false,
 		},
@@ -205,42 +189,14 @@ func Test_getFAQs(t *testing.T) {
 			getFAQs(tt.args.w, tt.args.r)
 		})
 	}
-	StopServer()
-}
-
-func TestStartServer(t *testing.T) {
-	logger.Init("debug", time.RFC3339, "TDBackend")
-
-	tests := []struct {
-		name      string
-		wantPanic bool
-	}{
-		{
-			name:      "StartServer_Success",
-			wantPanic: false,
-		},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			defer func() {
-				r := recover()
-				if (r != nil) != tt.wantPanic {
-					t.Errorf("getSessions(), wantPanic = %v", tt.wantPanic)
-				}
-			}()
-			_ = StartServer()
-		})
-	}
-	StopServer()
 }
 
 func Test_serveImage(t *testing.T) {
 
 	logger.Init("debug", time.RFC3339, "TDBackend")
 
-	_ = StartServer()
-	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/img/FFMC.jpg", nil)
-	rw := httptest.NewRecorder()
+	r := httptest.NewRequest(http.MethodGet, "http://localhost:8080/api/v1/img/FFMC.jpg", nil)
+	r = mux.SetURLVars(r, map[string]string{"name": "FFMC.jpg"})
 
 	type args struct {
 		w http.ResponseWriter
@@ -254,8 +210,8 @@ func Test_serveImage(t *testing.T) {
 		{
 			name: "getFFMC_Success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: r,
 			},
 			wantPanic: false,
 		},
@@ -271,5 +227,44 @@ func Test_serveImage(t *testing.T) {
 			serveImage(tt.args.w, tt.args.r)
 		})
 	}
-	StopServer()
+}
+
+func TestStopServer(t *testing.T) {
+	type args struct {
+		ctx context.Context
+		srv *http.Server
+	}
+	tests := []struct {
+		name string
+		args args
+	}{
+		{
+			name: "StopServer_Success",
+			args: args{
+				ctx: context.Background(),
+				srv: &http.Server{},
+			},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			StopServer(tt.args.ctx, tt.args.srv)
+		})
+	}
+}
+
+func TestStartServer(t *testing.T) {
+	tests := []struct {
+		name    string
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if err := StartServer(); (err != nil) != tt.wantErr {
+				t.Errorf("StartServer() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
 }

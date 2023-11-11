@@ -3,6 +3,8 @@ package commands
 import (
 	"context"
 	"net/http"
+	"os"
+	"os/signal"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -43,11 +45,9 @@ func serveImage(w http.ResponseWriter, r *http.Request) {
 }
 
 // RunServer func for running HTTP server
-func configureServer() *http.Server {
+func StartServer() error {
 
-	loadFileToMemory()
 	r := mux.NewRouter()
-
 	api := r.PathPrefix("/api/v1").Subrouter()
 	api.HandleFunc("/partners", getPartners).Methods(http.MethodGet)
 	api.HandleFunc("/deals", getDeals).Methods(http.MethodGet)
@@ -56,20 +56,35 @@ func configureServer() *http.Server {
 	api.HandleFunc("/faqs", getFAQs).Methods(http.MethodGet)
 	api.HandleFunc("/img/{name}", serveImage).Methods(http.MethodGet)
 
+	loadFileToMemory()
+
 	server = &http.Server{
 		Addr:              ":8080",
 		ReadHeaderTimeout: 5 * time.Second,
 		Handler:           r,
 	}
-	return server
+
+	ctx := context.Background()
+	StopServer(ctx, server)
+
+	return server.ListenAndServe()
 }
 
-func StartServer() error {
+// Graceful shutdown for HTTP server if Interrupt signal captured from OS
+func StopServer(ctx context.Context, srv *http.Server) {
 
-	return configureServer().ListenAndServe()
-}
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt)
+	go func() {
+		select {
+		case <-c:
+			break
+		case <-ctx.Done():
+			break
+		}
 
-func StopServer() error {
-
-	return server.Shutdown(context.Background())
+		_, cancel := context.WithTimeout(ctx, 5*time.Second)
+		defer cancel()
+		_ = srv.Shutdown(ctx)
+	}()
 }
