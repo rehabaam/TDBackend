@@ -1,6 +1,7 @@
 package config
 
 import (
+	"fmt"
 	"os"
 	"path/filepath"
 
@@ -38,19 +39,19 @@ func Load() {
 func readFile(cfg interface{}, path string) {
 	f, err := os.Open(filepath.Clean(path))
 	if err != nil {
-		panic(err)
+		fmt.Println(err.Error())
 	}
-	// defer the closing of our jsonFile so that we can parse it later on
+	// defer the closing of the file so that we can parse it later on
 	defer func() {
 		if err := f.Close(); err != nil {
-			panic(err)
+			fmt.Println(err.Error())
 		}
 	}()
 
 	decoder := yaml.NewDecoder(f)
-	err = decoder.Decode(cfg)
-	if err != nil {
-		panic(err)
+	fmt.Println(decoder)
+	if errD := decoder.Decode(cfg); errD != nil {
+		fmt.Println(errD.Error())
 	}
 }
 

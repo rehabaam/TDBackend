@@ -40,9 +40,9 @@ func Test_readFile(t *testing.T) {
 		path string
 	}
 	tests := []struct {
-		name      string
-		args      args
-		wantPanic bool
+		name    string
+		args    args
+		wantErr bool
 	}{
 		{
 			name: "givenExistPath_success",
@@ -50,7 +50,7 @@ func Test_readFile(t *testing.T) {
 				cfg:  &AppConfig,
 				path: "prod.yml",
 			},
-			wantPanic: false,
+			wantErr: false,
 		},
 		{
 			name: "givenNotExistPath_getPanic_failure",
@@ -58,17 +58,19 @@ func Test_readFile(t *testing.T) {
 				cfg:  nil,
 				path: "dummy-file.yml",
 			},
-			wantPanic: true,
+			wantErr: true,
+		},
+		{
+			name: "givenTestPath_getPanic_failure",
+			args: args{
+				cfg:  3,
+				path: "test.yml",
+			},
+			wantErr: true,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			defer func() {
-				r := recover()
-				if (r != nil) != tt.wantPanic {
-					t.Errorf("readFile(), wantPanic = %v", tt.wantPanic)
-				}
-			}()
 			readFile(tt.args.cfg, tt.args.path)
 		})
 	}
