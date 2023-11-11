@@ -2,12 +2,8 @@ package middleware
 
 import (
 	"context"
-	"crypto/rand"
-	"encoding/base64"
 	"fmt"
 	"net/http"
-	"os"
-	"strings"
 	"sync/atomic"
 )
 
@@ -24,23 +20,6 @@ var (
 	// reqID is counter for request ID
 	reqID uint64
 )
-
-// init Initializes constant part of request ID
-func init() {
-	hostname, err := os.Hostname()
-	if hostname == "" || err != nil {
-		hostname = "localhost"
-	}
-	var buf [12]byte
-	var b64 string
-	for len(b64) < 10 {
-		_, _ = rand.Read(buf[:])
-		b64 = base64.StdEncoding.EncodeToString(buf[:])
-		b64 = strings.NewReplacer("+", "", "/", "").Replace(b64)
-	}
-
-	prefix = fmt.Sprintf("%s/%s", hostname, b64[0:10])
-}
 
 // RequestID is a middleware that injects a request ID into the context of each
 // request. A request ID is a string of the form "host.example.com/random-0001",

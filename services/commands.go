@@ -1,10 +1,15 @@
 package commands
 
 import (
+	"context"
 	"net/http"
 	"time"
 
 	"github.com/gorilla/mux"
+)
+
+var (
+	server *http.Server
 )
 
 // getPartners func for getting TriDubai annually partners
@@ -38,7 +43,7 @@ func serveImage(w http.ResponseWriter, r *http.Request) {
 }
 
 // RunServer func for running HTTP server
-func RunServer() error {
+func configureServer() *http.Server {
 
 	loadFileToMemory()
 	r := mux.NewRouter()
@@ -51,10 +56,20 @@ func RunServer() error {
 	api.HandleFunc("/faqs", getFAQs).Methods(http.MethodGet)
 	api.HandleFunc("/img/{name}", serveImage).Methods(http.MethodGet)
 
-	server := &http.Server{
+	server = &http.Server{
 		Addr:              ":8080",
 		ReadHeaderTimeout: 5 * time.Second,
 		Handler:           r,
 	}
-	return server.ListenAndServe()
+	return server
+}
+
+func StartServer() error {
+
+	return configureServer().ListenAndServe()
+}
+
+func StopServer() error {
+
+	return server.Shutdown(context.Background())
 }
