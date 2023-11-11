@@ -1,16 +1,23 @@
 package commands
 
 import (
+	"TDBackend/logger"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+	"time"
 )
 
 func Test_getSessions(t *testing.T) {
 
-	data, _ := http.NewRequest("GET", "https://apps.tridubai.org/api/v1/sessions", nil)
+	logger.Init("debug", time.RFC3339, "TDBackend")
+
+	StartServer()
+	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/sessions", nil)
 	rw := httptest.NewRecorder()
 
+	fmt.Println("test")
 	type args struct {
 		w http.ResponseWriter
 		r *http.Request
@@ -21,12 +28,12 @@ func Test_getSessions(t *testing.T) {
 		wantPanic bool
 	}{
 		{
-			name: "getSessions_failure",
+			name: "getSessions_Success",
 			args: args{
 				w: rw,
 				r: data,
 			},
-			wantPanic: true,
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -40,11 +47,15 @@ func Test_getSessions(t *testing.T) {
 			getSessions(tt.args.w, tt.args.r)
 		})
 	}
+	StopServer()
 }
 
 func Test_getDeals(t *testing.T) {
 
-	data, _ := http.NewRequest("GET", "https://apps.tridubai.org/api/v1/deals", nil)
+	logger.Init("debug", time.RFC3339, "TDBackend")
+
+	_ = StartServer()
+	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/deals", nil)
 	rw := httptest.NewRecorder()
 
 	type args struct {
@@ -57,20 +68,12 @@ func Test_getDeals(t *testing.T) {
 		wantPanic bool
 	}{
 		{
-			name: "getDeals_failure",
-			args: args{
-				w: rw,
-				r: data,
-			},
-			wantPanic: true,
-		},
-		{
 			name: "getDeals_success",
 			args: args{
 				w: rw,
 				r: data,
 			},
-			wantPanic: true,
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -84,11 +87,15 @@ func Test_getDeals(t *testing.T) {
 			getDeals(tt.args.w, tt.args.r)
 		})
 	}
+	StopServer()
 }
 
 func Test_getPartners(t *testing.T) {
 
-	data, _ := http.NewRequest("GET", "https://apps.tridubai.org/api/v1/partners", nil)
+	logger.Init("debug", time.RFC3339, "TDBackend")
+
+	_ = StartServer()
+	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/partners", nil)
 	rw := httptest.NewRecorder()
 
 	type args struct {
@@ -101,12 +108,12 @@ func Test_getPartners(t *testing.T) {
 		wantPanic bool
 	}{
 		{
-			name: "getPartner_failure",
+			name: "getPartner_success",
 			args: args{
 				w: rw,
 				r: data,
 			},
-			wantPanic: true,
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -120,11 +127,15 @@ func Test_getPartners(t *testing.T) {
 			getPartners(tt.args.w, tt.args.r)
 		})
 	}
+	StopServer()
 }
 
 func Test_getKit(t *testing.T) {
 
-	data, _ := http.NewRequest("GET", "https://apps.tridubai.org/api/v1/kit", nil)
+	logger.Init("debug", time.RFC3339, "TDBackend")
+
+	_ = StartServer()
+	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/kit", nil)
 	rw := httptest.NewRecorder()
 
 	type args struct {
@@ -137,12 +148,12 @@ func Test_getKit(t *testing.T) {
 		wantPanic bool
 	}{
 		{
-			name: "getKit_failure",
+			name: "getKit_success",
 			args: args{
 				w: rw,
 				r: data,
 			},
-			wantPanic: true,
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -156,11 +167,15 @@ func Test_getKit(t *testing.T) {
 			getKit(tt.args.w, tt.args.r)
 		})
 	}
+	StopServer()
 }
 
 func Test_getFAQs(t *testing.T) {
 
-	data, _ := http.NewRequest("GET", "https://apps.tridubai.org/api/v1/faqs", nil)
+	logger.Init("debug", time.RFC3339, "TDBackend")
+
+	_ = StartServer()
+	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/faqs", nil)
 	rw := httptest.NewRecorder()
 
 	type args struct {
@@ -173,12 +188,12 @@ func Test_getFAQs(t *testing.T) {
 		wantPanic bool
 	}{
 		{
-			name: "getFAQs_failure",
+			name: "getFAQs_Success",
 			args: args{
 				w: rw,
 				r: data,
 			},
-			wantPanic: true,
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -192,16 +207,19 @@ func Test_getFAQs(t *testing.T) {
 			getFAQs(tt.args.w, tt.args.r)
 		})
 	}
+	StopServer()
 }
 
-func TestRunServer(t *testing.T) {
+func TestStartServer(t *testing.T) {
+	logger.Init("debug", time.RFC3339, "TDBackend")
+
 	tests := []struct {
 		name      string
 		wantPanic bool
 	}{
 		{
-			name:      "getSessions_failure",
-			wantPanic: true,
+			name:      "StartServer_Success",
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -212,7 +230,48 @@ func TestRunServer(t *testing.T) {
 					t.Errorf("getSessions(), wantPanic = %v", tt.wantPanic)
 				}
 			}()
-			RunServer()
+			_ = StartServer()
 		})
 	}
+	StopServer()
+}
+
+func Test_serveImage(t *testing.T) {
+
+	logger.Init("debug", time.RFC3339, "TDBackend")
+
+	_ = StartServer()
+	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/img/FFMC.jpg", nil)
+	rw := httptest.NewRecorder()
+
+	type args struct {
+		w http.ResponseWriter
+		r *http.Request
+	}
+	tests := []struct {
+		name      string
+		args      args
+		wantPanic bool
+	}{
+		{
+			name: "getFFMC_Success",
+			args: args{
+				w: rw,
+				r: data,
+			},
+			wantPanic: false,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			defer func() {
+				r := recover()
+				if (r != nil) != tt.wantPanic {
+					t.Errorf("serveImage(), wantPanic = %v", tt.wantPanic)
+				}
+			}()
+			serveImage(tt.args.w, tt.args.r)
+		})
+	}
+	StopServer()
 }

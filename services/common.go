@@ -40,11 +40,12 @@ func readFile(endPoint string) (string, error) {
 	t := time.Now()
 
 	// Get file name
-	fileName := "static/" + endPoint + ".json"
+	fileName := "./static/" + endPoint + ".json"
 
 	// Open our jsonFile
 	jsonFile, err := os.Open(filepath.Clean(fileName))
 
+	fmt.Println("File", jsonFile, err)
 	// if we os.Open returns an error then handle it
 	if err != nil {
 		logger.AppLogger(labels.Error, "Error while opening "+endPoint+" file!", time.Since(t).Nanoseconds(), labels.Error+"|"+err.Error())
