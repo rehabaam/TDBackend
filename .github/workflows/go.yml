@@ -54,7 +54,8 @@ jobs:
       uses: coverallsapp/github-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: ${{ github.workspace }}/coverage.out
+        format: golang
+        file: ${{ github.workspace }}/coverage.out
         
     # GoSec security scanner
     - name: Run Gosec Security Scanner
