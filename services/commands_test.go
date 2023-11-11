@@ -2,7 +2,6 @@ package commands
 
 import (
 	"TDBackend/logger"
-	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"testing"
