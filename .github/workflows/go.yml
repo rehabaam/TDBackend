@@ -56,7 +56,7 @@ jobs:
     - name: Code coverage
       env:
         COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: goveralls -coverprofile=covprofile -service=github
+      run: goveralls -coverprofile=coverage.out -service=github
         
     # GoSec security scanner
     - name: Run Gosec Security Scanner
