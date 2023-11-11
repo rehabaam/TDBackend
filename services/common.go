@@ -45,7 +45,6 @@ func readFile(endPoint string) (string, error) {
 	// Open our jsonFile
 	jsonFile, err := os.Open(filepath.Clean(fileName))
 
-	fmt.Println("File", jsonFile, err)
 	// if we os.Open returns an error then handle it
 	if err != nil {
 		logger.AppLogger(labels.Error, "Error while opening "+endPoint+" file!", time.Since(t).Nanoseconds(), labels.Error+"|"+err.Error())

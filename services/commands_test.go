@@ -17,7 +17,6 @@ func Test_getSessions(t *testing.T) {
 	data, _ := http.NewRequest("GET", "http://localhost:8080/api/v1/sessions", nil)
 	rw := httptest.NewRecorder()
 
-	fmt.Println("test")
 	type args struct {
 		w http.ResponseWriter
 		r *http.Request
