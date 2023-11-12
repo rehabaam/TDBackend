@@ -1,7 +1,6 @@
 package commands
 
 import (
-	"github.com/rehabaam/TDBackend/logger"
 	"bytes"
 	"encoding/json"
 	"fmt"
@@ -11,6 +10,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/rehabaam/TDBackend/logger"
 
 	"github.com/gorilla/mux"
 )

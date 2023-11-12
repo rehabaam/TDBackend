@@ -1,14 +1,15 @@
 package commands
 
 import (
-	labels "github.com/rehabaam/TDBackend/localization"
-	"github.com/rehabaam/TDBackend/logger"
 	"fmt"
 	"io"
 	"net/http"
 	"os"
 	"path/filepath"
 	"time"
+
+	labels "github.com/rehabaam/TDBackend/localization"
+	"github.com/rehabaam/TDBackend/logger"
 
 	"github.com/gorilla/mux"
 )

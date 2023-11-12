@@ -1,12 +1,13 @@
 package main
 
 import (
+	"fmt"
+	"time"
+
 	"github.com/rehabaam/TDBackend/config"
 	labels "github.com/rehabaam/TDBackend/localization"
 	"github.com/rehabaam/TDBackend/logger"
 	commands "github.com/rehabaam/TDBackend/services"
-	"fmt"
-	"time"
 )
 
 // main func loads application's configurations and starts the HTTP server

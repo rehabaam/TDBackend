@@ -1,12 +1,13 @@
 package logger
 
 import (
-	labels "github.com/rehabaam/TDBackend/localization"
 	"fmt"
 	"os"
 	"strings"
 	"sync"
 	"time"
+
+	labels "github.com/rehabaam/TDBackend/localization"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
