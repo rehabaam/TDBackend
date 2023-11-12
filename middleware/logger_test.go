@@ -1,12 +1,13 @@
 package middleware
 
 import (
-	labels "github.com/rehabaam/TDBackend/localization"
-	applog "github.com/rehabaam/TDBackend/logger"
 	"crypto/tls"
 	"net/http"
 	"testing"
 	"time"
+
+	labels "github.com/rehabaam/TDBackend/localization"
+	applog "github.com/rehabaam/TDBackend/logger"
 
 	"github.com/stretchr/testify/assert"
 )
