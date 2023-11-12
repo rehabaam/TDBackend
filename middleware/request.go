@@ -21,7 +21,7 @@ var (
 	reqID uint64
 )
 
-// RequestID is a middleware that injects a request ID into the context of each
+// AddRequestID is a middleware that injects a request ID into the context of each
 // request. A request ID is a string of the form "host.example.com/random-0001",
 // where "random" is a base62 random string that uniquely identifies this go
 // process, and where the last number is an atomically incremented request

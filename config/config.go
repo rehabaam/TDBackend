@@ -11,11 +11,9 @@ import (
 
 var (
 	configPath string = "config/prod.yml"
-	// Config main config
-	AppConfig Config
+	AppConfig  Config
 )
 
-// ActiveConfig Micro-service's configs
 type Config struct {
 	Microservice struct {
 		Processor string `yaml:"processor" envconfig:"PROCESSOR_NAME"`

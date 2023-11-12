@@ -31,7 +31,7 @@ func startServer() error {
 	logger.AppLogger(labels.Info, labels.ServerStarting, 0)
 	err := commands.NewServer().Start()
 	if err != nil {
-		// Print the error occured while starting the server.
+		// Print the error occurred while starting the server.
 		fmt.Printf("%+v\n", err.Error())
 	}
 	return err
