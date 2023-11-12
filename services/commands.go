@@ -7,6 +7,10 @@ import (
 	"github.com/gorilla/mux"
 )
 
+type Server struct {
+	*http.Server
+}
+
 // getPartners func for getting TriDubai annually partners
 func getPartners(w http.ResponseWriter, r *http.Request) {
 	_, _ = getData("Partners", w, r)
@@ -37,12 +41,10 @@ func serveImage(w http.ResponseWriter, r *http.Request) {
 	_, _ = getImage(w, r)
 }
 
-// RunServer func for running HTTP server
-func RunServer() error {
+// NewServer func for HTTP server
+func NewServer() Server {
 
-	loadFileToMemory()
 	r := mux.NewRouter()
-
 	api := r.PathPrefix("/api/v1").Subrouter()
 	api.HandleFunc("/partners", getPartners).Methods(http.MethodGet)
 	api.HandleFunc("/deals", getDeals).Methods(http.MethodGet)
@@ -51,10 +53,20 @@ func RunServer() error {
 	api.HandleFunc("/faqs", getFAQs).Methods(http.MethodGet)
 	api.HandleFunc("/img/{name}", serveImage).Methods(http.MethodGet)
 
-	server := &http.Server{
-		Addr:              ":8080",
-		ReadHeaderTimeout: 5 * time.Second,
-		Handler:           r,
+	loadFileToMemory()
+
+	return Server{
+		&http.Server{
+			Addr:              ":8080",
+			ReadHeaderTimeout: 5 * time.Second,
+			Handler:           r,
+		},
 	}
-	return server.ListenAndServe()
+}
+
+func (s Server) Start() error {
+	if err := s.ListenAndServe(); err != http.ErrServerClosed {
+		return err
+	}
+	return nil
 }

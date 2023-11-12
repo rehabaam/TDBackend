@@ -19,9 +19,6 @@ var (
 	// ZLevel is global logger
 	ZLevel *zap.AtomicLevel
 
-	// timeFormat is custom Time format
-	customTimeFormat string
-
 	// onceInit guarantee initialize logger only once
 	onceInit sync.Once
 
@@ -73,7 +70,7 @@ func Init(lvl string, timeFormat string, msName string) error {
 
 		// High-priority output should also go to standard error, and low-priority
 		// output should also go to standard out.
-		// It is usefull for Kubernetes deployment.
+		// It is useful for Kubernetes deployment.
 		// Kubernetes interprets os.Stdout log items as INFO and os.Stderr log items
 		// as ERROR by default.
 		highPriority := zap.LevelEnablerFunc(func(lvl zapcore.Level) bool {
@@ -86,12 +83,9 @@ func Init(lvl string, timeFormat string, msName string) error {
 		consoleErrors := zapcore.Lock(os.Stderr)
 
 		// Configure console output.
-		var useCustomTimeFormat bool
 		ecfg := zap.NewProductionEncoderConfig()
 		if len(timeFormat) > 0 {
-			customTimeFormat = timeFormat
 			ecfg.EncodeTime = customTimeEncoder
-			useCustomTimeFormat = true
 		}
 		consoleEncoder := zapcore.NewJSONEncoder(ecfg)
 
@@ -105,11 +99,6 @@ func Init(lvl string, timeFormat string, msName string) error {
 		// From a zapcore.Core, it's easy to construct a Logger.
 		Log = zap.New(core)
 		zap.RedirectStdLog(Log)
-
-		// If timeformat is not provided, log a warning on console to use a zap default or custom one
-		if !useCustomTimeFormat {
-			Log.Warn("time format for logger is not provided - use zap default")
-		}
 	})
 
 	return err
@@ -141,8 +130,6 @@ func AppLogger(level string, description string, time int64, items ...string) {
 		Log.Debug(description, fields...)
 	case "error":
 		Log.Error(description, fields...)
-	case "fatal":
-		Log.Fatal(description, fields...)
 	case "warn":
 		Log.Warn(description, fields...)
 	}

@@ -1,15 +1,20 @@
 package commands
 
 import (
+	"TDBackend/logger"
+	"context"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+	"time"
+
+	"github.com/gorilla/mux"
 )
 
 func Test_getSessions(t *testing.T) {
 
-	data, _ := http.NewRequest("GET", "https://apps.tridubai.org/api/v1/sessions", nil)
-	rw := httptest.NewRecorder()
+	logger.Init("debug", time.RFC3339, "TDBackend")
+	repo["Sessions"] = `test`
 
 	type args struct {
 		w http.ResponseWriter
@@ -21,12 +26,12 @@ func Test_getSessions(t *testing.T) {
 		wantPanic bool
 	}{
 		{
-			name: "getSessions_failure",
+			name: "getSessions_Success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: httptest.NewRequest(http.MethodGet, "https://localhost/api/v1/sessions", nil),
 			},
-			wantPanic: true,
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -44,8 +49,8 @@ func Test_getSessions(t *testing.T) {
 
 func Test_getDeals(t *testing.T) {
 
-	data, _ := http.NewRequest("GET", "https://apps.tridubai.org/api/v1/deals", nil)
-	rw := httptest.NewRecorder()
+	logger.Init("debug", time.RFC3339, "TDBackend")
+	repo["Deals"] = `test`
 
 	type args struct {
 		w http.ResponseWriter
@@ -57,20 +62,12 @@ func Test_getDeals(t *testing.T) {
 		wantPanic bool
 	}{
 		{
-			name: "getDeals_failure",
-			args: args{
-				w: rw,
-				r: data,
-			},
-			wantPanic: true,
-		},
-		{
 			name: "getDeals_success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: httptest.NewRequest(http.MethodGet, "https://localhost/api/v1/deals", nil),
 			},
-			wantPanic: true,
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -88,8 +85,8 @@ func Test_getDeals(t *testing.T) {
 
 func Test_getPartners(t *testing.T) {
 
-	data, _ := http.NewRequest("GET", "https://apps.tridubai.org/api/v1/partners", nil)
-	rw := httptest.NewRecorder()
+	logger.Init("debug", time.RFC3339, "TDBackend")
+	repo["Partners"] = `test`
 
 	type args struct {
 		w http.ResponseWriter
@@ -101,12 +98,12 @@ func Test_getPartners(t *testing.T) {
 		wantPanic bool
 	}{
 		{
-			name: "getPartner_failure",
+			name: "getPartner_success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: httptest.NewRequest(http.MethodGet, "https://localhost/api/v1/partners", nil),
 			},
-			wantPanic: true,
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -124,8 +121,8 @@ func Test_getPartners(t *testing.T) {
 
 func Test_getKit(t *testing.T) {
 
-	data, _ := http.NewRequest("GET", "https://apps.tridubai.org/api/v1/kit", nil)
-	rw := httptest.NewRecorder()
+	logger.Init("debug", time.RFC3339, "TDBackend")
+	repo["Kit"] = `test`
 
 	type args struct {
 		w http.ResponseWriter
@@ -137,12 +134,12 @@ func Test_getKit(t *testing.T) {
 		wantPanic bool
 	}{
 		{
-			name: "getKit_failure",
+			name: "getKit_success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: httptest.NewRequest(http.MethodGet, "https://localhost/api/v1/kit", nil),
 			},
-			wantPanic: true,
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -160,8 +157,8 @@ func Test_getKit(t *testing.T) {
 
 func Test_getFAQs(t *testing.T) {
 
-	data, _ := http.NewRequest("GET", "https://apps.tridubai.org/api/v1/faqs", nil)
-	rw := httptest.NewRecorder()
+	logger.Init("debug", time.RFC3339, "TDBackend")
+	repo["FAQs"] = `test`
 
 	type args struct {
 		w http.ResponseWriter
@@ -173,12 +170,12 @@ func Test_getFAQs(t *testing.T) {
 		wantPanic bool
 	}{
 		{
-			name: "getFAQs_failure",
+			name: "getFAQs_Success",
 			args: args{
-				w: rw,
-				r: data,
+				w: httptest.NewRecorder(),
+				r: httptest.NewRequest(http.MethodGet, "https://localhost/api/v1/faqs", nil),
 			},
-			wantPanic: true,
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -194,14 +191,29 @@ func Test_getFAQs(t *testing.T) {
 	}
 }
 
-func TestRunServer(t *testing.T) {
+func Test_serveImage(t *testing.T) {
+
+	logger.Init("debug", time.RFC3339, "TDBackend")
+
+	r := httptest.NewRequest(http.MethodGet, "http://localhost:8080/api/v1/img/FFMC.jpg", nil)
+	r = mux.SetURLVars(r, map[string]string{"name": "FFMC.jpg"})
+
+	type args struct {
+		w http.ResponseWriter
+		r *http.Request
+	}
 	tests := []struct {
 		name      string
+		args      args
 		wantPanic bool
 	}{
 		{
-			name:      "getSessions_failure",
-			wantPanic: true,
+			name: "getFFMC_Success",
+			args: args{
+				w: httptest.NewRecorder(),
+				r: r,
+			},
+			wantPanic: false,
 		},
 	}
 	for _, tt := range tests {
@@ -209,10 +221,22 @@ func TestRunServer(t *testing.T) {
 			defer func() {
 				r := recover()
 				if (r != nil) != tt.wantPanic {
-					t.Errorf("getSessions(), wantPanic = %v", tt.wantPanic)
+					t.Errorf("serveImage(), wantPanic = %v", tt.wantPanic)
 				}
 			}()
-			RunServer()
+			serveImage(tt.args.w, tt.args.r)
 		})
+	}
+}
+
+func TestStartServer(t *testing.T) {
+	srv := NewServer()
+	go func() {
+		time.Sleep(1 * time.Second)
+		srv.Shutdown(context.Background())
+	}()
+	err := srv.Start()
+	if err != nil {
+		t.Error("unexpected error:", err)
 	}
 }

@@ -27,13 +27,6 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
 
-    # Sonar cloud scan for TDBackend project
-    - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.SQGH_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
     # Get Project dependencies
     - name: Get dependencies
       run: |
@@ -45,16 +38,25 @@ jobs:
         fi
         
     # Get Project dependencies
-    # - name: Create Coverage report
-    #   run: |
-    #    go install github.com/ory/go-acc@latest
-    #    go-acc -o coverage.out ./... -- -timeout 30m
+    - name: Create Coverage report
+      run: |
+       go install github.com/ory/go-acc@latest
+       go-acc -o coverage.out ./... -- -timeout 30m
+       
+    # Sonar cloud scan for TDBackend project
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.SQGH_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-    # - name: Code coverage
-    #   uses: coverallsapp/github-action@master
-    #   with:
-    #     github-token: ${{ secrets.GITHUB_TOKEN }}
-    #     path-to-lcov: ${{ github.workspace }}/coverage.out
+    - name: Install goveralls
+      run: go install github.com/mattn/goveralls@latest
+      
+    - name: Code coverage
+      env:
+        COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: goveralls -coverprofile=coverage.out -service=github
         
     # GoSec security scanner
     - name: Run Gosec Security Scanner
