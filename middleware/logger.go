@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	labels "TDBackend/localization"
+	labels "github.com/rehabaam/TDBackend/localization"
 
 	"net/http"
 	"strings"

@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"TDBackend/logger"
+	"github.com/rehabaam/TDBackend/logger"
 	"context"
 	"net/http"
 	"net/http/httptest"

@@ -1,7 +1,7 @@
 package logger
 
 import (
-	labels "TDBackend/localization"
+	labels "github.com/rehabaam/TDBackend/localization"
 	"fmt"
 	"os"
 	"strings"

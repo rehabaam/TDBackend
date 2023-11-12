@@ -1,8 +1,8 @@
 package commands
 
 import (
-	labels "TDBackend/localization"
-	"TDBackend/logger"
+	labels "github.com/rehabaam/TDBackend/localization"
+	"github.com/rehabaam/TDBackend/logger"
 	"fmt"
 	"io"
 	"net/http"
