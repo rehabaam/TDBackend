@@ -1,4 +1,4 @@
-module TDBackend
+module github.com/rehabaam/TDBackend
 
 go 1.21
 

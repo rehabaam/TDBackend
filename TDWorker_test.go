@@ -1,8 +1,8 @@
 package main
 
 import (
-	labels "TDBackend/localization"
-	applog "TDBackend/logger"
+	labels "github.com/rehabaam/TDBackend/localization"
+	applog "github.com/rehabaam/TDBackend/logger"
 
 	"testing"
 	"time"

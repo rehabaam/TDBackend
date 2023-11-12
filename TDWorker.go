@@ -1,10 +1,10 @@
 package main
 
 import (
-	"TDBackend/config"
-	labels "TDBackend/localization"
-	"TDBackend/logger"
-	commands "TDBackend/services"
+	"github.com/rehabaam/TDBackend/config"
+	labels "github.com/rehabaam/TDBackend/localization"
+	"github.com/rehabaam/TDBackend/logger"
+	commands "github.com/rehabaam/TDBackend/services"
 	"fmt"
 	"time"
 )

@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"TDBackend/logger"
+	"github.com/rehabaam/TDBackend/logger"
 	"bytes"
 	"encoding/json"
 	"fmt"
