@@ -111,6 +111,11 @@ func Test_loadFileToMemory(t *testing.T) {
 			loadFileToMemory()
 		})
 	}
+
+	fNames = []string{"Sessions2"}
+
+	loadFileToMemory()
+
 }
 
 func jsonMarshaller(str string) string {

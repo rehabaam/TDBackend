@@ -29,7 +29,7 @@ func main() {
 // startServer func starts an HTTP server that exposes RESTful APIs
 func startServer() error {
 	logger.AppLogger(labels.Info, labels.ServerStarting, 0)
-	err := commands.StartServer()
+	err := commands.NewServer().Start()
 	if err != nil {
 		// Print the error occured while starting the server.
 		fmt.Printf("%+v\n", err.Error())

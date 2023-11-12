@@ -187,6 +187,24 @@ func TestAppLogger(t *testing.T) {
 				items:       []string{"description | error"},
 			},
 		},
+		{
+			name: "givenWarnArguments_returnNothing_success",
+			args: args{
+				level:       "warn",
+				description: "description",
+				time:        1593332975979,
+				items:       []string{"description | warn"},
+			},
+		},
+		{
+			name: "givenPipeArguments_returnNothing_Error",
+			args: args{
+				level:       "debug",
+				description: "description",
+				time:        1593332975979,
+				items:       []string{"description fatal"},
+			},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

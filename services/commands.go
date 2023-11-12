@@ -1,18 +1,15 @@
 package commands
 
 import (
-	"context"
 	"net/http"
-	"os"
-	"os/signal"
 	"time"
 
 	"github.com/gorilla/mux"
 )
 
-var (
-	server *http.Server
-)
+type Server struct {
+	*http.Server
+}
 
 // getPartners func for getting TriDubai annually partners
 func getPartners(w http.ResponseWriter, r *http.Request) {
@@ -44,8 +41,8 @@ func serveImage(w http.ResponseWriter, r *http.Request) {
 	_, _ = getImage(w, r)
 }
 
-// RunServer func for running HTTP server
-func StartServer() error {
+// NewServer func for HTTP server
+func NewServer() Server {
 
 	r := mux.NewRouter()
 	api := r.PathPrefix("/api/v1").Subrouter()
@@ -58,33 +55,18 @@ func StartServer() error {
 
 	loadFileToMemory()
 
-	server = &http.Server{
-		Addr:              ":8080",
-		ReadHeaderTimeout: 5 * time.Second,
-		Handler:           r,
+	return Server{
+		&http.Server{
+			Addr:              ":8080",
+			ReadHeaderTimeout: 5 * time.Second,
+			Handler:           r,
+		},
 	}
-
-	ctx := context.Background()
-	StopServer(ctx, server)
-
-	return server.ListenAndServe()
 }
 
-// Graceful shutdown for HTTP server if Interrupt signal captured from OS
-func StopServer(ctx context.Context, srv *http.Server) {
-
-	c := make(chan os.Signal, 1)
-	signal.Notify(c, os.Interrupt)
-	go func() {
-		select {
-		case <-c:
-			break
-		case <-ctx.Done():
-			break
-		}
-
-		_, cancel := context.WithTimeout(ctx, 5*time.Second)
-		defer cancel()
-		_ = srv.Shutdown(ctx)
-	}()
+func (s Server) Start() error {
+	if err := s.ListenAndServe(); err != http.ErrServerClosed {
+		return err
+	}
+	return nil
 }
