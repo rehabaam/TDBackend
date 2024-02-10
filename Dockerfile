@@ -1,5 +1,5 @@
 # Start from golang v1.16 base image
-FROM golang:1.21.4-alpine as builder
+FROM golang:1.22-alpine as builder
 
 # Set the Current Working Directory inside the container
 WORKDIR $GOPATH/TDBackend
